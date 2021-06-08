@@ -7,7 +7,7 @@
 // ROFI THEME (~/.config/rofi/theme.rasi)
 // -------------------------
 
-// I would've put Variables first but Rofi screams if you don't put this block first ;(
+
 configuration {
 	font:			        @font;
     show-icons:             true;
@@ -21,22 +21,24 @@ configuration {
 * {
     font:       "JetBrains Mono 10";
     bg:         #202020;
-    fg:         #202020;
-    fg-alt:     #cccda9;
-    warmc:       #cccda9;
+    fg:         #ffffce;
+     mainc:      #ff9999;
+    // mainc:      #99ff99;
+    // mainc:      #9999ff;
 }
 
 window {
     background-color:   @bg;
-	border:				6px;
-	border-color:		@warmc;
-	width:				50%;
+	border:				0px;
+	border-color:		@mainc;
+	width:				75%;
     location:           center;
+    border-radius:      0px;
 }
 
 prompt {
-    enabled: 			true;
-	padding: 			0.30% 1% 1% -0.5%;
+    enabled: 			false;
+	padding: 			1%;
 	text-color: 		@fg;
 	font:				"FontAwesome 12";
 }
@@ -45,19 +47,23 @@ entry {
     text-color:         @fg;
     placeholder-color:  @fg;
     placeholder:        "Search...";
-    padding:            0.10% 0% 0% 0%;
+    padding:            1%;
+    background-color:   @bg;
+    border-radius:      10px;
 }
 
 inputbar {
 	children: 		    [prompt, entry];
-    padding:            1.45%;
+    padding:            2.5% 25%;
+    background-color:   @mainc;
+    border-radius:      10px;
 }
 
 listview {
     background-color:   @bg;
     padding:            10px;
-    columns:            2;
-    lines:              9;
+    columns:            3;
+    lines:              10;
     spacing:            0.6%;
 }
 
@@ -69,7 +75,7 @@ mainbox {
 
 element {
     background-color:   @bg;
-    text-color:         @fg-alt;
+    text-color:         @fg;
     padding:            1% 0.5% 1% 0.5%;
 }
 
@@ -82,6 +88,7 @@ element-text {
 }
 
 element selected {
-    background-color:   @warmc;
-    text-color:         @fg;
+    border-radius:      10px;
+    background-color:   @mainc;
+    text-color:         @bg;
 }
