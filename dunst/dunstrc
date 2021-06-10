@@ -106,7 +106,7 @@
 
     ### Text ###
 
-    font = JetBrains Mono 10
+    font = Iosevka Nerd Font Bold 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -330,7 +330,7 @@
     foreground = "#202020"
     background = "#99ff99"
     frame_color = "#99ff99"
-    timeout = 10
+    timeout = 3
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 

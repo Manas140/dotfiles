@@ -22,7 +22,7 @@ configuration {
     font:       "JetBrains Mono 10";
     bg:         #202020;
     fg:         #ffffce;
-     mainc:      #ff9999;
+     mainc:      #ffffce;
     // mainc:      #99ff99;
     // mainc:      #9999ff;
 }

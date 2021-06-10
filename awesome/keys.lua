@@ -96,6 +96,7 @@ for i = 1, tags do
         awful.key({metakey}, '#'..i + 9,
                   function ()
                         local tag = awful.screen.focused().tags[i]
+--                         awful.util.spawn(string.format('feh --bg-scale ~/.config/awesome/themes/%s.png',string.format(i)))
                         if tag then
                            tag:view_only()
                         end

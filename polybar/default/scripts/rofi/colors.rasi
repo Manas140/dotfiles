@@ -3,10 +3,8 @@
 * {
   al:   #00000000;
   bg:   #202020;
-  /* bga:  #9999ff; */
-  bga:  #ff9999; 
-  /* bga:  #99ff99; */
+  bga:  #ffffce;
   bar:  #202020;
   fg:   #FFFFce;
-  ac:   #ff9999;
+  ac:   #ffffce;
 }
