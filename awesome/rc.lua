@@ -6,7 +6,6 @@
 
 -- AWESOME CONFIG (~/.config/awesome/rc.lua)
 -------------------------------------------------------
-package.loaded['awful.hotkeys_popup.keys.tmux'] = {}
 -- Importing libraries
 local gears = require('gears')
 local awful = require('awful')
@@ -18,7 +17,7 @@ local keys = require('keys')
 
 -- Variables
 math.randomseed(os.time())
-wall = math.random(0,13)
+wall = math.random(0,34)
 -- Loading the theme
 theme_path = string.format('%s/.config/awesome/themes/%s.lua', os.getenv('HOME'), 'default')
 beautiful.init(theme_path)
@@ -43,13 +42,13 @@ beautiful.init(theme_path)
 
 -- Layouts
 awful.layout.layouts = {
-    awful.layout.suit.fair,
-    awful.layout.suit.spiral.dwindle,
+    --awful.layout.suit.fair,
+    awful.layout.suit.tile,
+    awful.layout.suit.tile.left,
     awful.layout.suit.floating,
+    --awful.layout.suit.spiral.dwindle,
     --awful.layout.suit.max,
     --awful.layout.suit.magnifier,
-    --awful.layout.suit.tile,
-    --awful.layout.suit.tile.left,
     --awful.layout.suit.tile.bottom,
     --awful.layout.suit.tile.top,
     --awful.layout.suit.corner.nw,
@@ -110,10 +109,11 @@ client.connect_signal('unfocus', function(c) c.border_color = beautiful.border_n
 
 -- Autostart
 awful.spawn.with_shell('redshift -x && redshift -O 4000K')
-awful.spawn.with_shell('~/.config/polybar/launch.sh')
-awful.spawn.with_shell('picom')
-awful.spawn.with_shell('dunst')
-awful.spawn.with_shell(string.format('feh --bg-scale ~/.config/awesome/themes/%s.png',string.format(wall)))
+awful.spawn.with_shell('~/.config/polybar/launch.sh --manas')
+awful.spawn.with_shell('pkill dunst && dunst')
+awful.spawn.with_shell('xbacklight =10')
+awful.spawn.with_shell('pkill picom || picom')
+awful.spawn.with_shell(string.format('feh --bg-scale ~/Pictures/Wallpapers/bg_%s.jpg',string.format(wall)))
 awful.spawn.with_shell('flameshot')
 
 -- Garbage Collection

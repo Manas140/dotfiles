@@ -3,8 +3,6 @@
 -- Importing libraries
 local gears = require('gears')
 local awful = require('awful')
-local hotkeys_popup = require('awful.hotkeys_popup')
-require('awful.hotkeys_popup.keys')
 
 -- Variables
 local keys = {}
@@ -22,8 +20,8 @@ keys.globalkeys = gears.table.join(
     -- Awesome
     awful.key({metakey, 'Shift'}, 'r', awesome.restart,
               {description = 'Reload Awesome', group = 'Awesome'}),
-    awful.key({metakey}, 's', hotkeys_popup.show_help,
-              {description='Show Keybindings', group='Awesome'}),
+    awful.key({metakey}, 'l', function () awesome.util.spawn('exec ~/.config/polybar/defualt/scripts/powermenu.sh') end,
+              {description = 'PowerMenu', group = 'Awesome'}),
     awful.key({metakey}, 'Tab', function () awful.layout.inc(1) end,
               {description = 'Toggle Layout', group = 'Awesome'}),
 
@@ -43,24 +41,10 @@ keys.globalkeys = gears.table.join(
               {description='Text Editor', group='Applications'}),
     awful.key({metakey}, 'r', function() awful.util.spawn('rofi -show drun') end,
               {description='Application Launcher', group='Applications'}),
-              awful.key({metakey}, 'b', function() awful.util.spawn('firefox') end,
+    awful.key({metakey}, 'w', function() awful.util.spawn('firefox') end,
               {description='Browser', group='Applications'}),
-    awful.key({metakey}, 'f', function() awful.util.spawn('ranger') end,
+    awful.key({metakey}, 'e', function() awful.util.spawn('ranger') end,
               {description='File Explorer', group='Applications'}),
-
-    -- Media Keys
-    awful.key({metakey}, 'F7', function() awful.util.spawn('playerctl play-pause') end,
-              {description='Play/Pause', group='Media Keys'}),
-    awful.key({metakey}, 'F3', function() awful.util.spawn('amixer set Master 5%+') end,
-              {description='Increase Volume (by 5%)', group='Media Keys'}),
-    awful.key({metakey}, 'F2', function() awful.util.spawn('amixer set Master 5%-') end,
-              {description='Decrease Volume (by 5%)', group='Media Keys'}),
-    awful.key({metakey}, 'F4', function() awful.util.spawn('amixer set Master toggle') end,
-              {description='Mute/Unmute', group='Media Keys'}),
-    awful.key({metakey}, 'F8', function() awful.util.spawn('playerctl next') end,
-              {description='Next track', group='Media Keys'}),
-    awful.key({metakey}, 'F6', function() awful.util.spawn('playerctl previous') end,
-              {description='Previous Track', group='Media Keys'}),
 
     -- Screenshots
     awful.key({metakey}, 'Print', function() awful.util.spawn('flameshot gui') end,
@@ -96,7 +80,6 @@ for i = 1, tags do
         awful.key({metakey}, '#'..i + 9,
                   function ()
                         local tag = awful.screen.focused().tags[i]
---                         awful.util.spawn(string.format('feh --bg-scale ~/.config/awesome/themes/%s.png',string.format(i)))
                         if tag then
                            tag:view_only()
                         end

@@ -84,7 +84,7 @@
     frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#282828"
+    frame_color = "#1c1c1c"
 
     # Define a color for the separator.
     # possible values are:
@@ -106,7 +106,7 @@
 
     ### Text ###
 
-    font = Iosevka Nerd Font Bold 10
+    font = Fira Code Regular 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -242,7 +242,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 10
+    corner_radius = 0
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -327,9 +327,9 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    foreground = "#202020"
-    background = "#99ff99"
-    frame_color = "#99ff99"
+    foreground = "#1c1c1c"
+    background = "#aaaaff"
+    frame_color = "#aaaaff"
     timeout = 3
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
@@ -337,18 +337,18 @@
 [urgency_normal]
    # background = "#285577"
    # foreground = "#ffffce"
-    background = "#9999ff"
-    foreground = "#202020"
-    frame_color = "#9999ff"
+    background = "#aaffaa"
+    foreground = "#1c1c1c"
+    frame_color = "#aaffaa"
 
     timeout = 5
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    foreground = "#202020"
-    background = "#ff9999"
-    frame_color = "#ff9999"
+    foreground = "#1c1c1c"
+    background = "#ffaaaa"
+    frame_color = "#ffaaaa"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
