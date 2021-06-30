@@ -19,10 +19,10 @@ configuration {
 
 // Variables
 * {
-    font:       "JetBrains Mono 10";
-    bg:         #202020;
-    fg:         #ffffce;
-     mainc:      #ffffce;
+    font:       "Fira Code Regular 10";
+    bg:         #1c1c1c;
+    fg:         #c1c1c1;
+     mainc:      #3c3c3c;
     // mainc:      #99ff99;
     // mainc:      #9999ff;
 }
@@ -33,14 +33,12 @@ window {
 	border-color:		@mainc;
 	width:				75%;
     location:           center;
-    border-radius:      0px;
 }
 
 prompt {
     enabled: 			false;
 	padding: 			1%;
 	text-color: 		@fg;
-	font:				"FontAwesome 12";
 }
 
 entry {
@@ -48,15 +46,13 @@ entry {
     placeholder-color:  @fg;
     placeholder:        "Search...";
     padding:            1%;
-    background-color:   @bg;
-    border-radius:      10px;
+    background-color:   @mainc;
 }
 
 inputbar {
 	children: 		    [prompt, entry];
-    padding:            2.5% 25%;
+    padding:            1% 0%;
     background-color:   @mainc;
-    border-radius:      10px;
 }
 
 listview {
@@ -88,7 +84,6 @@ element-text {
 }
 
 element selected {
-    border-radius:      10px;
     background-color:   @mainc;
-    text-color:         @bg;
+    text-color:         @fg;
 }
