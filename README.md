@@ -1,15 +1,15 @@
-Softwares:
+Config:
 ```
   WM: AwesomeWm, i3-Gaps
   Bar: Polybar
+  Compository: Picom
+  Pdf Reader: Zathura
+  ImageViewer: Feh
+  ScreenShot: FlameShot, Scrot
   Notifications: Dunst
   Terminal: Kitty
   Font: Fira-Code-Regular, Feather
   AppLauncher: Rofi
   TextEditor: Nvim
 ```
-i3:
-![i3](https://user-images.githubusercontent.com/64472354/123823407-b118b500-d8ec-11eb-9395-5f3ea56820ff.png)
-
-AwesomeWm:
-![awesomewm](https://user-images.githubusercontent.com/64472354/123823495-c7bf0c00-d8ec-11eb-9986-5b1123f67d26.png)
+![desk](https://user-images.githubusercontent.com/64472354/124790835-0a12c980-df3b-11eb-8d79-ac62cfb2eff5.gif)
