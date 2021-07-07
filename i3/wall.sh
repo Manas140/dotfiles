@@ -1,1 +1,1 @@
-feh --bg-scale ~/Pictures/Wallpapers/bg_$(($RANDOM%11)).jpg
+feh --bg-fill ~/Pictures/Wallpapers/bg_$(($RANDOM%6)).jpg
