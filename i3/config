@@ -47,10 +47,10 @@ bindsym $mod+r exec --no-startup-id rofi -show drun
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # resize window (you can also use the mouse for that)
-bindsym $mod+Left resize shrink width 10 px
-bindsym $mod+Down resize grow height 10 px
-bindsym $mod+Up resize shrink height 10 px
-bindsym $mod+Right resize grow width 10 px
+bindsym $mod+Left resize shrink width 20 px
+bindsym $mod+Down resize grow height 20 px
+bindsym $mod+Up resize shrink height 20 px
+bindsym $mod+Right resize grow width 20 px
 
 #change focus
 bindsym $alt+Tab focus next
@@ -86,6 +86,8 @@ bindsym $mod+5 workspace number $ws5
 bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 
+bindsym $mod+h split h
+bindsym $mod+v split v
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -99,6 +101,8 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+for_window[class="feh"] floating toggle
+for_window[class="sxiv"] floating toggle
 
 
 gaps inner 10
