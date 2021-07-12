@@ -17,7 +17,7 @@ local keys = require('keys')
 
 -- Variables
 math.randomseed(os.time())
-wall = math.random(0,34)
+wall = math.random(0,6)
 -- Loading the theme
 theme_path = string.format('%s/.config/awesome/themes/%s.lua', os.getenv('HOME'), 'default')
 beautiful.init(theme_path)
