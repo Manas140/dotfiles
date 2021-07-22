@@ -1,7 +1,9 @@
 
-echo -e [*] This Config Replaces Your Previous Config, Make A Backup Before Running ./install.sh -y
+echo -e [*] This Config Replaces Your Previous Config, Make A Backup Before Running It.
 
-if [[ "$1" == "-y" ]]; then
+echo "[*] Proceeding Here Will Replace Your Config(If It's There)."
+read -p "[*] DO YOU WANT TO PROCEED [Y/N] " allowed
+if [[ $allowed = Y* || $allowed = y* ]]; then
     cp -r fonts/* ~/.fonts/
     echo -e [*] Fonts Installed
     cp -r walls/* ~/Pictures/Wallpapers/.
@@ -9,5 +11,6 @@ if [[ "$1" == "-y" ]]; then
     cp -r * ~/.config/.
     rm -r ~/.config/README.md ~/.config/install.sh ~/.config/fonts/ ~/.config/walls/
     echo -e [*] Config Installed
+else
+    echo -e Aborting!
 fi
-
