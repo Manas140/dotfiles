@@ -1,0 +1,80 @@
+
+#     ___    __                _ __  __
+#    /   |  / /___ ___________(_) /_/ /___  __
+#   / /| | / / __ `/ ___/ ___/ / __/ __/ / / /
+#  / ___ |/ / /_/ / /__/ /  / / /_/ /_/ /_/ /
+# /_/  |_/_/\__,_/\___/_/  /_/\__/\__/\__, /
+#                                    /____/
+
+# ALACRITTY CONFIG (~/.config/alacritty/alacritty.yml)
+# --------------------------------------------------------------------------
+
+# Terminal Emulator Settings
+window:
+  padding:
+    x: 5
+    y: 5
+  scrolling:
+    history: 15
+
+# Setting zsh as the default shell
+shell:
+    program: /bin/zsh
+
+# Font
+font:
+  normal:
+    family: Fira Code
+    style: Medium
+
+  bold:
+    family: Fira Code
+    style: Bold
+
+  italic:
+    family: Fira Code
+    style: Italic
+
+  bold_italic:
+    family: Fira Code
+    style: Bold Italic
+
+  size: 10
+
+# Bell
+bell:
+  animation: EaseOutSine
+  duration: 0
+  color: '#c1c1c1'
+
+# Colors
+colors:
+  # Default colors
+  primary:
+    background: '#1c1c1c'
+    foreground: '#c1c1c1'
+
+  # Normal colors
+  normal:
+    black:   '#1c1c1c'
+    red:     '#F9BBD0'
+    green:   '#F0F4C2'
+    yellow:  '#FFCCBB'
+    blue:    '#9EA8DB'
+    magenta: '#D0C4E8'
+    cyan:    '#B2DFDC'
+    white:   '#c1c1c1'
+
+  # Bright colors
+  bright:
+    black:   '#1c1c1c'
+    red:     '#F9BBD0'
+    green:   '#F0F4C2'
+    yellow:  '#FFCCBB'
+    blue:    '#9EA8DB'
+    magenta: '#D0C4E8'
+    cyan:    '#B2DFDC'
+    white:   '#c1c1c1'
+
+# Apply Settings without relaunching
+live_config_reload: true
