@@ -16,9 +16,6 @@ local keys = require('keys')
 
 
 -- Variables
-math.randomseed(os.time())
-wall = math.random(0,6)
--- Loading the theme
 theme_path = string.format('%s/.config/awesome/themes/%s.lua', os.getenv('HOME'), 'default')
 beautiful.init(theme_path)
 
@@ -113,7 +110,7 @@ awful.spawn.with_shell('~/.config/polybar/launch.sh --manas')
 awful.spawn.with_shell('pkill dunst && dunst')
 awful.spawn.with_shell('xbacklight =10')
 awful.spawn.with_shell('pkill picom || picom')
-awful.spawn.with_shell(string.format('feh --bg-scale ~/Pictures/Wallpapers/bg_%s.jpg',string.format(wall)))
+awful.spawn.with_shell('bash ~/.config/awesome/wall.sh')
 awful.spawn.with_shell('flameshot')
 
 -- Garbage Collection

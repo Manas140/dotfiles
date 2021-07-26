@@ -7,6 +7,7 @@ export EDITOR=nvim
 
 # Aliases
 alias ls='ls --color=auto'
+alias cls='clear'
 alias docker='sudo docker'
 alias open='xdg-open'
 alias xi='sudo xbps-install'
@@ -14,8 +15,8 @@ alias xr='sudo xbps-remove'
 alias xq='sudo xbps-query'
 
 # History
-HISTSIZE=15
-SAVEHIST=15
+HISTSIZE=500
+SAVEHIST=1000
 HISTFILE=/.cache/zsh/history
 
 # Tab completion
