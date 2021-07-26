@@ -4,8 +4,9 @@ dir="$HOME/.config/polybar"
 themes=(`ls --hide="launch.sh" $dir`)
 
 launch_bar() {
-	# Terminate already running bar instances
-    pgrep polybar > /dev/null && pkill polybar || polybar -q main -c "$dir/$style.ini" &
+    killall -q polybar
+    while pgrep polybar; do sleep 1; done
+    polybar -q main -c "$dir/$style.ini" && exit 1;
 }
 
 if [[ "$1" == "--comfy" ]]; then
