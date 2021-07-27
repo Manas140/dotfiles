@@ -1,4 +1,7 @@
-Config:
+<p align="center">
+  <img src="https://images-ext-2.discordapp.net/external/F5BErm0oOLBBk7OUMKaYXxgK4PxukdnMxyUd-CUXJLo/https/media.discordapp.net/attachments/635625917623828520/869474639573823488/out.gif?width=726&height=408">
+</p>
+
 ```
   WM: AwesomeWm, i3-Gaps
   Bar: Polybar
@@ -12,4 +15,3 @@ Config:
   AppLauncher: Rofi
   TextEditor: Nvim
 ```
-![desk](https://user-images.githubusercontent.com/64472354/124790835-0a12c980-df3b-11eb-8d79-ac62cfb2eff5.gif)
