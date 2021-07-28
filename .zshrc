@@ -17,7 +17,7 @@ alias xq='sudo xbps-query'
 # History
 HISTSIZE=500
 SAVEHIST=1000
-HISTFILE=/.cache/zsh/history
+HISTFILE=.cache/zsh_history
 
 # Tab completion
 autoload -U compinit
