@@ -3,15 +3,15 @@
 </p>
 
 ```
-  WM: AwesomeWm, i3-Gaps
-  Bar: Polybar
-  Compository: Picom
-  Pdf Reader: Zathura
-  ImageViewer: Feh
-  ScreenShot: FlameShot, Scrot
-  Notifications: Dunst
-  Terminal: Kitty
-  Font: Fira-Code-Regular, Feather
-  AppLauncher: Rofi
-  TextEditor: Nvim
+  WM: awesome, i3-gaps
+  Bar: polybar
+  Compositor: picom
+  Pdf Reader: zathura
+  ImageViewer: feh, sxiv
+  ScreenShot: flameShot, maim
+  Notification: dunst
+  Terminal: kitty, alacritty
+  Font: Fira-Code-Regular, feather
+  AppLauncher: rofi
+  TextEditor: nvim
 ```

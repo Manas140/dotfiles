@@ -106,11 +106,11 @@ client.connect_signal('unfocus', function(c) c.border_color = beautiful.border_n
 
 -- Autostart
 awful.spawn.with_shell('redshift -x && redshift -O 4000K')
-awful.spawn.with_shell('~/.config/polybar/launch.sh --manas')
-awful.spawn.with_shell('pkill dunst && dunst')
-awful.spawn.with_shell('xbacklight =10')
-awful.spawn.with_shell('pkill picom || picom')
-awful.spawn.with_shell('bash ~/.config/awesome/wall.sh')
+awful.spawn.with_shell('killall polybar; ~/.config/polybar/launch.sh --manas')
+awful.spawn.with_shell('killall dunst && dunst')
+awful.spawn.with_shell('xbacklight -set 10')
+awful.spawn.with_shell('killall picom || picom')
+awful.spawn.with_shell('feh --bg-fill -r -z ~/Pictures/Wallpapers')
 awful.spawn.with_shell('flameshot')
 
 -- Garbage Collection

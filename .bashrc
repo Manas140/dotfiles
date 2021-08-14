@@ -1,6 +1,7 @@
 [[ $- != *i* ]] && return
 alias ls='ls --color=auto'
 alias cls='clear'
+alias ytdl='youtube-dl'
 alias docker='sudo docker'
 alias open='xdg-open'
 alias xr='sudo xbps-remove'

@@ -11,7 +11,7 @@ font pango:Fira Code 10
 
 # Auto Start
 exec_always --no-startup-id picom
-exec_always --no-startup-id xbacklight =10%
+exec_always --no-startup-id xbacklight -set 10
 exec_always --no-startup-id redshift -x && redshift -O 4500k
 exec_always --no-startup-id flameshot
 exec_always --no-startup-id dunst
@@ -104,7 +104,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 for_window[class="feh"] floating toggle
 for_window[class="sxiv"] floating toggle
 
-
 gaps inner 10
 #gaps outer 7
 smart_gaps on
@@ -115,4 +114,3 @@ hide_edge_borders smart_no_gaps
 new_window normal 0 px
 new_window none
 default_border none
-

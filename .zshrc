@@ -8,6 +8,7 @@ export EDITOR=nvim
 # Aliases
 alias ls='ls --color=auto'
 alias cls='clear'
+alias ytdl='youtube-dl'
 alias docker='sudo docker'
 alias open='xdg-open'
 alias xi='sudo xbps-install'
@@ -27,7 +28,7 @@ compinit
 _comp_options+=(globdots)
 
 #binds
-bindkey    "^[[3~"          delete-char
+bindkey "^[[3~" delete-char
 bindkey "^A" beginning-of-line
 bindkey "^Q" end-of-line
 bindkey "^[[1;5C" forward-word
