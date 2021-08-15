@@ -15,7 +15,7 @@ exec_always --no-startup-id xbacklight -set 10
 exec_always --no-startup-id redshift -x && redshift -O 4500k
 exec_always --no-startup-id flameshot
 exec_always --no-startup-id dunst
-exec_always --no-startup-id bash ~/.config/i3/wall.sh
+exec_always --no-startup-id feh --bg-fill -r -z ~/Pictures/Wallpapers
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --manas

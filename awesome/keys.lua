@@ -20,10 +20,6 @@ keys.globalkeys = gears.table.join(
     -- Awesome
     awful.key({metakey, 'Shift'}, 'r', awesome.restart,
               {description = 'Reload Awesome', group = 'Awesome'}),
-    awful.key({metakey}, 'l', function () awesome.util.spawn('exec ~/.config/polybar/defualt/scripts/powermenu.sh') end,
-              {description = 'PowerMenu', group = 'Awesome'}),
-    awful.key({metakey}, 'Tab', function () awful.layout.inc(1) end,
-              {description = 'Toggle Layout', group = 'Awesome'}),
 
     -- Window management
     awful.key({'Mod1',}, 'Tab', function() awful.client.focus.byidx(1) end,
@@ -37,14 +33,8 @@ keys.globalkeys = gears.table.join(
     -- Applications
     awful.key({metakey}, 'Return', function() awful.util.spawn(terminal) end,
               {description='Terminal', group='Applications'}),
-    awful.key({metakey}, 't', function() awful.util.spawn(editor_launch) end,
-              {description='Text Editor', group='Applications'}),
     awful.key({metakey}, 'r', function() awful.util.spawn('rofi -show drun') end,
               {description='Application Launcher', group='Applications'}),
-    awful.key({metakey}, 'w', function() awful.util.spawn('firefox') end,
-              {description='Browser', group='Applications'}),
-    awful.key({metakey}, 'e', function() awful.util.spawn('ranger') end,
-              {description='File Explorer', group='Applications'}),
 
     -- Screenshots
     awful.key({metakey}, 'Print', function() awful.util.spawn('flameshot gui') end,
@@ -56,7 +46,7 @@ keys.clientkeys = gears.table.join(
               {description = 'Close', group = 'Window Management'}),
     awful.key({metakey}, 'space', function(c) c.fullscreen = not c.fullscreen; c:raise() end,
               {description = 'Toggle Fullscreen', group = 'Window Management'}),
-    awful.key({metakey, 'Shift'}, 'space', function() awful.client.floating.toggle() end,
+    awful.key({metakey}, 'Tab', function() awful.client.floating.toggle() end,
               {description = 'Toggle Floating', group = 'Window Management'})
 )
 

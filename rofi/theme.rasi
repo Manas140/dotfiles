@@ -22,9 +22,7 @@ configuration {
     font:       "Fira Code Regular 10";
     bg:         #1c1c1c;
     fg:         #c1c1c1;
-     mainc:      #3c3c3c;
-    // mainc:      #99ff99;
-    // mainc:      #9999ff;
+    mainc:      #2c2c2c;
 }
 
 window {

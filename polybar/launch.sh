@@ -1,35 +1,24 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
 dir="$HOME/.config/polybar"
-themes=(`ls --hide="launch.sh" $dir`)
 
 launch_bar() {
-    killall -q polybar
-    while pgrep polybar; do sleep 1; done
-    polybar -q main -c "$dir/$style.ini" && exit 1;
+  killall polybar
+  while pgrep polybar; do killall polybar; done
+  polybar -q main -c "$dir/$style.ini"
 }
 
-if [[ "$1" == "--comfy" ]]; then
-	style="comfy"
-	launch_bar
+case $1 in
+  *comfy*) style="comfy";;
+  *compact*) style="compact";;
+  *info*) style="informative";;
+  *h*)
+    printf "  Usage : launch.sh --theme"
+    printf "\n"
+    printf "  Available Themes :"
+    printf "  comfy    compact    info"
+    exit;;
+  *) style="config";;
+esac
 
-elif [[ "$1" == "--info" ]]; then
-	style="informative"
-	launch_bar
-
-elif [[ "$1" == "--compact" ]]; then
-	style="compact"
-	launch_bar
-
-elif [[ "$1" == "--manas" ]]; then
-    style="config"
-    launch_bar
-
-else
-	cat <<- EOF
-	Usage : launch.sh --theme
-
-	Available Themes :
-	--comfy    --compact       --info
-	EOF
-fi
+launch_bar

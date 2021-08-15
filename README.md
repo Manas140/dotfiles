@@ -9,6 +9,7 @@
   Pdf Reader: zathura
   ImageViewer: feh, sxiv
   ScreenShot: flameShot, maim
+  FileManager: fff, ranger
   Notification: dunst
   Terminal: kitty, alacritty
   Font: Fira-Code-Regular, feather

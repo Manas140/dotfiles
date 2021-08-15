@@ -11,7 +11,7 @@ for pkg_man in ${pkg_managers[@]}; do
         *pacman*)
             pacman -Sy &>/dev/null && pacman -Qu | wc -l;;
         *)
-            echo Error;;
+            printf "Error\n";;
     esac
     exit
 done

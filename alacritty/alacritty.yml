@@ -57,24 +57,25 @@ colors:
   # Normal colors
   normal:
     black:   '#1c1c1c'
-    red:     '#F9BBD0'
-    green:   '#F0F4C2'
-    yellow:  '#FFCCBB'
-    blue:    '#9EA8DB'
-    magenta: '#D0C4E8'
-    cyan:    '#B2DFDC'
+    red:     '#FF9AA2'
+    green:   '#E2F0CB'
+    yellow:  '#FEDAC4'
+    blue:    '#C7CEEA'
+    magenta: '#FCB7B2'
+    cyan:    '#B6E9D6'
     white:   '#c1c1c1'
 
   # Bright colors
   bright:
     black:   '#1c1c1c'
-    red:     '#F9BBD0'
-    green:   '#F0F4C2'
-    yellow:  '#FFCCBB'
-    blue:    '#9EA8DB'
-    magenta: '#D0C4E8'
-    cyan:    '#B2DFDC'
+    red:     '#FF9AA2'
+    green:   '#E2F0CB'
+    yellow:  '#FEDAC4'
+    blue:    '#C7CEEA'
+    magenta: '#FCB7B2'
+    cyan:    '#B6E9D6'
     white:   '#c1c1c1'
+
 
 # Apply Settings without relaunching
 live_config_reload: true
