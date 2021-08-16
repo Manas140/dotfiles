@@ -12,8 +12,8 @@
 # Terminal Emulator Settings
 window:
   padding:
-    x: 5
-    y: 5
+    x: 3
+    y: 3
   scrolling:
     history: 15
 
@@ -56,7 +56,7 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#1c1c1c'
+    black:   '#2c2c2c'
     red:     '#FF9AA2'
     green:   '#E2F0CB'
     yellow:  '#FEDAC4'
@@ -67,7 +67,7 @@ colors:
 
   # Bright colors
   bright:
-    black:   '#1c1c1c'
+    black:   '#2c2c2c'
     red:     '#FF9AA2'
     green:   '#E2F0CB'
     yellow:  '#FEDAC4'
