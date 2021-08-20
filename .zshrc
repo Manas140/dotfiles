@@ -2,7 +2,7 @@
 # --------------------------
 
 #Prompt
-PS1="%F{magenta}%B%~/%b%f → "
+PS1="%F{magenta}%B%~/ → %b%f"
 export EDITOR=nvim
 
 # Aliases

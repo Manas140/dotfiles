@@ -6,13 +6,16 @@
   WM: awesome, i3-gaps
   Bar: polybar
   Compositor: picom
-  Pdf Reader: zathura
+  MusicPlayer: musikcube
+  MusicVisualiser: cava
+  PdfReader: zathura
   ImageViewer: feh, sxiv
-  ScreenShot: flameShot, maim
+  ScreenShot: flameshot, maim
   FileManager: fff, ranger
   Notification: dunst
   Terminal: kitty, alacritty
-  Font: Fira-Code-Regular, feather
+  Font: Fira-Code, feather
   AppLauncher: rofi
-  TextEditor: nvim
+  Fetch: fetch
+  TextEditor: micro, nvim
 ```

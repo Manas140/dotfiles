@@ -1,87 +1,78 @@
-//     ____        _____
-//    / __ \____  / __(_)
-//   / /_/ / __ \/ /_/ /
-//  / _, _/ /_/ / __/ /
-// /_/ |_|\____/_/ /_/
-
-// ROFI THEME (~/.config/rofi/theme.rasi)
-// -------------------------
-
 
 configuration {
-	font:			        @font;
-    show-icons:             true;
-    icon-theme:             "Papirus";
-    display-drun: 		    "";
-    drun-display-format:    "{name}";
-    disable-history:        false;
+  font: @font;
+  show-icons:             true;
+  icon-theme:             "Papirus";
+  display-drun: 		    "";
+  drun-display-format:    "{name}";
+  disable-history:        false;
 }
 
 // Variables
 * {
-    font:       "Fira Code Regular 10";
-    bg:         #1c1c1c;
-    fg:         #c1c1c1;
-    mainc:      #2c2c2c;
+  font: "Fira Code Regular 10";
+  bg: #1c1c1c;
+  fg: #c1c1c1;
+  mainc: #2c2c2c;
 }
 
 window {
-    background-color:   @bg;
-	border:				0px;
-	border-color:		@mainc;
-	width:				75%;
-    location:           center;
+  background-color: @bg;
+  border: 0px;
+  border-color:	@mainc;
+  width: 75%;
+  location: center;
 }
 
 prompt {
-    enabled: 			false;
-	padding: 			1%;
-	text-color: 		@fg;
+  enabled: false;
+  padding: 1%;
+  text-color: @fg;
 }
 
 entry {
-    text-color:         @fg;
-    placeholder-color:  @fg;
-    placeholder:        "Search...";
-    padding:            1%;
-    background-color:   @mainc;
+  text-color: @fg;
+  placeholder-color: @fg;
+  placeholder: "Search...";
+  padding: 1%;
+  background-color: @mainc;
 }
 
 inputbar {
-	children: 		    [prompt, entry];
-    padding:            1% 0%;
-    background-color:   @mainc;
+  children: [prompt, entry];
+  padding: 1% 0%;
+  background-color: @mainc;
 }
 
 listview {
-    background-color:   @bg;
-    padding:            10px;
-    columns:            3;
-    lines:              10;
-    spacing:            0.6%;
+  background-color: @bg;
+  padding: 10px;
+  columns: 3;
+  lines: 10;
+  spacing: 0.6%;
 }
 
 mainbox {
-    children:           [inputbar, listview];
-    background-color:   @bg;
-    spacing:           	0.5%;
+  children: [inputbar, listview];
+  background-color: @bg;
+  spacing: 0.5%;
 }
 
 element {
-    background-color:   @bg;
-    text-color:         @fg;
-    padding:            1% 0.5% 1% 0.5%;
+  background-color: @bg;
+  text-color: @fg;
+  padding: 1% 0.5% 1% 0.5%;
 }
 
 element-icon {
-    size:               24px;
+  size: 24px;
 }
 
 element-text {
-    margin:             0% 0.25% 0% 0.25%;
+  margin: 0% 0.25% 0% 0.25%;
 }
 
 element selected {
-    background-color:   @mainc;
-    text-color:         @fg;
+  background-color: @mainc;
+  text-color: @fg;
 }
