@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #variables
 green="\033[1;32m"
@@ -13,8 +13,8 @@ printf "${green}[*] This Config Replaces Your Previous Config, Make A Backup Bef
 printf "${blue} [*] Proceeding Here Will Replace Your Config(If It's There).${yellow}\n"
 read -p "  [*] DO YOU WANT TO PROCEED [Y/N] " allowed
 
-if [[ $allowed = Y* || $allowed = y* || $allowed = "" ]]; then
-    cp -r .*rc ~/.
+case $allowed in
+  Y*|y*) cp -r .*rc ~/.
     printf "${magenta}   [*] Terminal Set\n"
     cp -r fonts/* ~/.fonts/
     printf "${magenta}   [*] Fonts Installed\n"
@@ -22,8 +22,7 @@ if [[ $allowed = Y* || $allowed = y* || $allowed = "" ]]; then
     printf "${magenta}   [*] Wallpapers Installed${end}\n"
     cp -r * ~/.config/.
     rm -r ~/.config/README.md ~/.config/LICENSE ~/.config/install.sh ~/.config/fonts/ ~/.config/walls/
-    printf "${green}[*] Config Installed${end}\n"
-else
-    printf "${red}[-] Aborting!${end}\n"
-fi
-
+    printf "${green}[*] Config Installed${end}\n";;
+  N*|n*) printf "${red}[-] Aborting!${end}\n";;
+  *) printf "${red}[-] Aborting!${end}\n";;
+esac
