@@ -1,7 +1,17 @@
+Usage:
 <p align="center">
-  <img src="https://images-ext-2.discordapp.net/external/F5BErm0oOLBBk7OUMKaYXxgK4PxukdnMxyUd-CUXJLo/https/media.discordapp.net/attachments/635625917623828520/869474639573823488/out.gif?width=726&height=408">
+  <img src="usage.png">
 </p>
 
+Rofi:
+<p align="center">
+  <img src="rofi.png">
+</p>
+
+Casual:
+<p align="center">
+  <img src="music.png">
+</p>
 ```
   WM: awesome, i3-gaps, bspwm
   Bar: polybar

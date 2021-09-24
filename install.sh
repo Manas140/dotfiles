@@ -21,7 +21,7 @@ case $allowed in
     cp -r walls/* ~/Pictures/Wallpapers/.
     printf "${magenta}   [*] Wallpapers Installed${end}\n"
     cp -r * ~/.config/.
-    rm -r ~/.config/README.md ~/.config/LICENSE ~/.config/install.sh ~/.config/fonts/ ~/.config/walls/
+    rm -r ~/.config/LICENSE ~/.config/fonts/ ~/.config/walls/ ~/.config/*.png
     printf "${green}[*] Config Installed${end}\n";;
   N*|n*) printf "${red}[-] Aborting!${end}\n";;
   *) printf "${red}[-] Aborting!${end}\n";;
