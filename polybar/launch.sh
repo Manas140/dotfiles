@@ -13,10 +13,7 @@ case $1 in
   *compact*) style="compact";;
   *info*) style="informative";;
   *h*)
-    printf "  Usage : launch.sh --theme"
-    printf "\n"
-    printf "  Available Themes :"
-    printf "  comfy    compact    info"
+    printf "Usage : launch.sh theme\nThemes: comfy compact info manas"
     exit;;
   *) style="config";;
 esac

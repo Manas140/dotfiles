@@ -1,3 +1,59 @@
 configuration {
-  theme: "theme.rasi";
+  modi: "drun";
+  font: "Fira Code 10";
+  disable-history: false;
+  display-drun: "Search";
+  drun-display-format: "{name}";
+}
+
+@theme "/dev/null"
+
+element-text, element-icon {
+  background-color: inherit;
+  text-color:       inherit;
+}
+
+@import "colors.rasi"
+
+* {
+  background-color: @bg;
+  text-color: @fg;
+}
+
+window {
+  padding: 20px;
+  height: 65%;
+  width: 65%;
+}
+
+prompt, entry {
+  text-color: @fg;
+  background-color: @al;
+  padding: 10px;
+}
+
+listview {
+  columns: 2;
+  lines: 10;
+}
+
+entry {
+  margin: 0 0 10px 10px;
+}
+
+prompt {
+    background-color: @al;
+    text-color: @fg;
+    margin: 0 0 10px 0;
+    padding: 10px 20px;
+}
+
+element {
+  background-color: @bg;
+  padding: 10px 20px;
+}
+
+element.selected {
+  background-color: @fg;
+  text-color: @bg;
 }

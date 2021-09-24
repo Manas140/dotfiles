@@ -18,7 +18,7 @@ exec_always --no-startup-id dunst
 exec_always --no-startup-id feh --bg-fill -r -z ~/Pictures/Wallpapers
 
 # Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh --manas
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%

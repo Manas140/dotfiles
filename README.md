@@ -3,7 +3,7 @@
 </p>
 
 ```
-  WM: awesome, i3-gaps
+  WM: awesome, i3-gaps, bspwm
   Bar: polybar
   Compositor: picom
   MusicPlayer: musikcube

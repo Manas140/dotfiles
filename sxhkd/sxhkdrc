@@ -1,0 +1,46 @@
+# terminal emulator
+super + Return
+  kitty
+
+# program launcher
+super + @r
+  rofi -show
+
+# make sxhkd reload its configuration files:
+super + Escape
+  pkill -USR1 -x sxhkd
+
+# screenshots
+super + Print
+  flameshot gui
+
+super + shift + e
+  bspc quit
+
+# restart bspwm
+super + shift + r
+  bspc wm -r
+
+# close and kill
+super + q
+  bspc node -{c,k}
+
+#toggle layout
+super + {t,f}
+  bspc node -t {tiled,floating}
+
+#toggle monocle layout
+super + m
+  bspc desktop -l next
+
+#toggle window focus
+alt + Tab
+  bspc node -f {next,prev}.local.!hidden.window
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+  bspc {desktop -f,node -d} '^{1-9,10}'
+
+# move a floating window
+super + alt + {Left,Down,Up,Right}
+  bspc node -v {-20 0,0 20,0 -20,20 0}

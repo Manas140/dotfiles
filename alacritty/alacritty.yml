@@ -45,35 +45,35 @@ font:
 bell:
   animation: EaseOutSine
   duration: 0
-  color: '#c1c1c1'
+  color: '#d8d8d8'
 
 # Colors
 colors:
   # Default colors
   primary:
-    background: '#1c1c1c'
-    foreground: '#c1c1c1'
+    background: '#181818'
+    foreground: '#d8d8d8'
 
   # Normal colors
   normal:
-    black:   '#2c2c2c'
-    red:     '#FF9AA2'
-    green:   '#E2F0CB'
-    yellow:  '#FEDAC4'
-    blue:    '#C7CEEA'
-    magenta: '#FCB7B2'
-    cyan:    '#B6E9D6'
+    black:   '#282828'
+    red:     '#AB4642'
+    green:   '#A1B56C'
+    yellow:  '#F7CA88'
+    blue:    '#7CAFC2'
+    magenta: '#BA8BAF'
+    cyan:    '#86C1B9'
     white:   '#c1c1c1'
 
   # Bright colors
   bright:
-    black:   '#2c2c2c'
-    red:     '#FF9AA2'
-    green:   '#E2F0CB'
-    yellow:  '#FEDAC4'
-    blue:    '#C7CEEA'
-    magenta: '#FCB7B2'
-    cyan:    '#B6E9D6'
+    black:   '#282828'
+    red:     '#AB4642'
+    green:   '#A1B56C'
+    yellow:  '#F7CA88'
+    blue:    '#7CAFC2'
+    magenta: '#BA8BAF'
+    cyan:    '#86C1B9'
     white:   '#c1c1c1'
 
 

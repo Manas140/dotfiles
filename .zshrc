@@ -8,6 +8,8 @@ export EDITOR=nvim
 # Aliases
 alias ls='ls --color=auto'
 alias cls='clear'
+alias py='python3'
+alias pip='pip3'
 alias ytdl='youtube-dl'
 alias docker='sudo docker'
 alias open='xdg-open'

@@ -14,28 +14,9 @@ require('awful.autofocus')
 local beautiful = require('beautiful')
 local keys = require('keys')
 
-
 -- Variables
 theme_path = string.format('%s/.config/awesome/themes/%s.lua', os.getenv('HOME'), 'default')
 beautiful.init(theme_path)
-
--- Set the wallpaper
--- local function set_wallpaper(s)
---     if beautiful.wallpaper then
---         local wallpaper = beautiful.wallpaper
---         if type(wallpaper) == 'function' then
---             wallpaper = wallpaper(s)
---         end
---         gears.wallpaper.maximized(wallpaper, s, true)
---     end
--- end
---
--- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
--- screen.connect_signal('property::geometry', set_wallpaper)
---
--- for s = 1, screen.count() do
--- 	gears.wallpaper.maximized(beautiful.wallpaper, s, true)
--- end
 
 -- Layouts
 awful.layout.layouts = {
