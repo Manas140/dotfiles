@@ -12,6 +12,7 @@ Casual:
 <p align="center">
   <img src="music.png">
 </p>
+
 ```
   WM: awesome, i3-gaps, bspwm
   Bar: polybar
