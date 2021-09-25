@@ -11,7 +11,7 @@ font pango:Fira Code 10
 
 # Auto Start
 exec_always --no-startup-id picom
-exec_always --no-startup-id redshift -x && redshift -O 4500k
+exec_always --no-startup-id redshift -x && redshift -O 4000k
 exec_always --no-startup-id flameshot
 exec_always --no-startup-id dunst
 exec_always --no-startup-id feh --bg-fill -r -z ~/Pictures/Wallpapers

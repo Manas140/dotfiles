@@ -9,7 +9,7 @@ picom &
 dunst &
 feh --bg-fill -r -z ~/Pictures/Wallpapers &
 xbacklight -set 10 &
-redshift -x && redshift -O 4500k &
+redshift -x && redshift -O 4000k &
 xsetroot -cursor_name left_ptr &
 $HOME/.config/polybar/launch.sh &
 
