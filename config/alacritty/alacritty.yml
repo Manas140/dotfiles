@@ -12,8 +12,8 @@
 # Terminal Emulator Settings
 window:
   padding:
-    x: 3
-    y: 3
+    x: 15
+    y: 15
   scrolling:
     history: 15
 

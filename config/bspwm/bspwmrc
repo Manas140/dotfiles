@@ -21,7 +21,7 @@ bspc monitor -d 1 2 3 4 5 6 7
 
 # borders and gaps
 bc border_width         0
-bc window_gap           10
+bc window_gap           15
 
 # others
 bc split_ratio          0.50

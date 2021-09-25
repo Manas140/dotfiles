@@ -22,8 +22,8 @@ element-text, element-icon {
 
 window {
   padding: 20px;
-  height: 65%;
-  width: 65%;
+  height: 60%;
+  width: 60%;
 }
 
 prompt, entry {

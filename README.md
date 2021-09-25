@@ -1,16 +1,16 @@
 Usage:
 <p align="center">
-  <img src="usage.png">
+  <img src="preview/usage.png">
 </p>
 
 Rofi:
 <p align="center">
-  <img src="rofi.png">
+  <img src="preview/rofi.png">
 </p>
 
 Casual:
 <p align="center">
-  <img src="music.png">
+  <img src="preview/music.png">
 </p>
 
 ```
@@ -22,11 +22,11 @@ Casual:
   PdfReader: zathura
   ImageViewer: feh, sxiv
   ScreenShot: flameshot, maim
-  FileManager: fff, ranger
+  FileManager: ranger
   Notification: dunst
   Terminal: kitty, alacritty
   Font: Fira-Code, feather
   AppLauncher: rofi
   Fetch: fetch
-  TextEditor: micro, nvim
+  TextEditor: nvim, micro
 ```
