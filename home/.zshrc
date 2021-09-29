@@ -1,6 +1,3 @@
-## ZSH Config (~/.zshrc)
-# --------------------------
-
 #Prompt
 PS1="%F{magenta}%B%~/ → %b%f"
 export EDITOR=nvim
@@ -16,6 +13,10 @@ alias open='xdg-open'
 alias xi='sudo xbps-install'
 alias xr='sudo xbps-remove'
 alias xq='sudo xbps-query'
+alias sudo='sudo -p "$(printf "\033[1;31mPassword: " )"'
+alias cp='printf "\033[1;32m" && cp -v'
+alias mv='printf "\033[1;34m" && mv -v'
+alias rm='printf "\033[1;31m" && rm -v'
 
 # History
 HISTSIZE=500

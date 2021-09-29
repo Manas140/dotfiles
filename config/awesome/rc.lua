@@ -88,7 +88,6 @@ client.connect_signal('unfocus', function(c) c.border_color = beautiful.border_n
 awful.spawn.with_shell('redshift -x && redshift -O 4000K')
 awful.spawn.with_shell('$HOME/.config/polybar/launch.sh')
 awful.spawn.with_shell('dunst')
-awful.spawn.with_shell('xbacklight -set 10')
 awful.spawn.with_shell('picom')
 awful.spawn.with_shell('feh --bg-fill -r -z ~/Pictures/Wallpapers')
 awful.spawn.with_shell('flameshot')
