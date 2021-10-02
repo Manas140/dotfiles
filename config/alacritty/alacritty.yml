@@ -56,25 +56,25 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#282828'
+    black:   '#383838'
     red:     '#AB4642'
     green:   '#A1B56C'
     yellow:  '#F7CA88'
     blue:    '#7CAFC2'
     magenta: '#BA8BAF'
     cyan:    '#86C1B9'
-    white:   '#c1c1c1'
+    white:   '#D8D8D8'
 
   # Bright colors
   bright:
     black:   '#282828'
-    red:     '#AB4642'
-    green:   '#A1B56C'
-    yellow:  '#F7CA88'
-    blue:    '#7CAFC2'
-    magenta: '#BA8BAF'
-    cyan:    '#86C1B9'
-    white:   '#c1c1c1'
+    red:     '#702E2B'
+    green:   '#6A7747'
+    yellow:  '#A38559'
+    blue:    '#517380'
+    magenta: '#7A5B73'
+    cyan:    '#587F7A'
+    white:   '#8E8E8E'
 
 
 # Apply Settings without relaunching

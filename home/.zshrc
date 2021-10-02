@@ -1,7 +1,6 @@
 #Prompt
-PS1="%F{magenta}%B%~/ → %b%f"
+PS1="%F{green}%B%~/%b%f "
 export EDITOR=nvim
-
 # Aliases
 alias ls='ls --color=auto'
 alias cls='clear'
@@ -10,13 +9,12 @@ alias pip='pip3'
 alias ytdl='youtube-dl'
 alias docker='sudo docker'
 alias open='xdg-open'
-alias xi='sudo xbps-install'
-alias xr='sudo xbps-remove'
-alias xq='sudo xbps-query'
-alias sudo='sudo -p "$(printf "\033[1;31mPassword: " )"'
-alias cp='printf "\033[1;32m" && cp -v'
+alias sudo='sudo -p "$(printf "\033[1;31mPassword: \033[0;0m" )"'
+alias rm='printf "\033[1;31m" && rm -rIv'
+alias cp='printf "\033[1;32m" && cp -rIv'
 alias mv='printf "\033[1;34m" && mv -v'
-alias rm='printf "\033[1;31m" && rm -v'
+alias mkdir='printf "\033[1;33m" && mkdir -v'
+alias rmdir='printf "\033[1;35m" && rmdir -v'
 
 # History
 HISTSIZE=500
