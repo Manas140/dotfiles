@@ -1,0 +1,41 @@
+#!/bin/sh
+
+greet="Welcome, Back"
+color="151515"
+wrong_pass="Incorrect, Try Again"
+font="Fira Code"
+background="$HOME/lock.png"
+
+i3lock \
+  --nofork \
+  --ignore-empty-password \
+  --indicator \
+  --bar-indicator \
+  --bar-pos="1070" \
+  --bar-base-width="10" \
+  --bar-orientation=horizontal \
+  --bar-color=151515 \
+  --ringvercolor=$color \
+  --ringwrongcolor=$color \
+  --bshlcolor=$color \
+  --keyhlcolor=$color \
+  --clock \
+  --timecolor=$color \
+  --timestr="%H:%M" \
+  --time-font="$font" \
+  --timesize=72 \
+  --timecolor=$color \
+  --datecolor=$color \
+  --datestr="%A, %d %B" \
+  --datecolor=$color \
+  --date-font="$font" \
+  --datesize=18 \
+  --verif-font="$font" \
+  --verifsize=24 \
+  --veriftext="$greet" \
+  --verifcolor=$color\
+  --wrong-font="$font" \
+  --wrongsize=24 \
+  --wrongtext="$wrong_pass" \
+  --wrongcolor=$color \
+  -i "$background" 

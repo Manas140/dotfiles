@@ -7,97 +7,78 @@ local awful = require('awful')
 -- Variables
 local keys = {}
 
-metakey = 'Mod4'
+mod = 'Mod4'
 tags = 7
-keys.tags = tags     --Uncomment this if not using custom tag names
+keys.tags = tags   --Uncomment this if not using custom tag names
 terminal = 'kitty'
-editor = 'nvim'
-editor_launch = terminal..' -e '..editor
 
 -- Keybindings
 keys.globalkeys = gears.table.join(
+  -- Awesome
+  awful.key({mod, 'Shift'}, 'r', awesome.restart),
 
-    -- Awesome
-    awful.key({metakey, 'Shift'}, 'r', awesome.restart,
-              {description = 'Reload Awesome', group = 'Awesome'}),
+  --Hardware
+  awful.key({}, 'XF86MonBrightnessUp', function() awful.util.spawn('xbacklight +5') end),
+  awful.key({}, 'XF86MonBrightnessDown', function() awful.util.spawn('xbacklight -5') end),
+  awful.key({}, 'XF86AudioRaiseVolume', function() awful.util.spawn('pactl set-sink-volume @DEFAULT_SINK@ +5%') end),
+  awful.key({}, 'XF86AudioLowerVolume', function() awful.util.spawn('pactl set-sink-volume @DEFAULT_SINK@ -5%') end),
+  -- Window management
+  awful.key({'Mod1'}, 'Tab', function() awful.client.focus.byidx(1) end),
+  awful.key({mod}, 'Right', function () awful.tag.incmwfact(0.05) end),
+  awful.key({mod}, 'Left', function () awful.tag.incmwfact(-0.05) end),
+  awful.key({mod}, 'Up', function () awful.client.incwfact(0.05) end),
+  awful.key({mod}, 'Down', function () awful.client.incwfact(-0.05) end),
 
-    -- Window management
-    awful.key({'Mod1',}, 'Tab', function() awful.client.focus.byidx(1) end,
-              {description = 'Switch between windows', group = 'Window Management'}),
-    awful.key({metakey}, 'Right', function () awful.tag.incmwfact(0.03) end,
-              {description = 'Increase master width factor', group = 'Window Management'}),
-    awful.key({metakey}, 'Left', function () awful.tag.incmwfact(-0.03) end,
-              {description = 'Decrease master width factor', group = 'Window Management'}),
+  -- Applications
+  awful.key({mod}, 'Return', function() awful.util.spawn(terminal) end),
+  awful.key({mod}, 'r', function() awful.util.spawn('rofi -show drun') end),
 
-
-    -- Applications
-    awful.key({metakey}, 'Return', function() awful.util.spawn(terminal) end,
-              {description='Terminal', group='Applications'}),
-    awful.key({metakey}, 'r', function() awful.util.spawn('rofi -show drun') end,
-              {description='Application Launcher', group='Applications'}),
-
-    -- Screenshots
-    awful.key({metakey}, 'Print', function() awful.util.spawn('flameshot gui') end,
-              {description='Take ScreenShot', group='Screenshots'})
+  -- Screenshots
+  awful.key({}, 'Print', function() awful.util.spawn('flameshot gui') end)
 )
 
 keys.clientkeys = gears.table.join(
-    awful.key({metakey}, 'q', function(c) c:kill() end,
-              {description = 'Close', group = 'Window Management'}),
-    awful.key({metakey}, 'space', function(c) c.fullscreen = not c.fullscreen; c:raise() end,
-              {description = 'Toggle Fullscreen', group = 'Window Management'}),
-    awful.key({metakey}, 'Tab', function() awful.client.floating.toggle() end,
-              {description = 'Toggle Floating', group = 'Window Management'})
+  awful.key({mod}, 'q', function(c) c:kill() end),
+  awful.key({mod}, 'space', function(c) c.fullscreen = not c.fullscreen; c:raise() end),
+  awful.key({mod}, 'Tab', function() awful.client.floating.toggle() end)
 )
 
 -- Mouse controls
 keys.clientbuttons = gears.table.join(
-    awful.button({}, 1, function(c) client.focus = c end),
-
-    -- Meta + left click to move window
-    awful.button({metakey}, 1, function() awful.mouse.client.move() end),
-
-    -- Meta + middle click to kill window
-     awful.button({metakey}, 2, function(c) c:kill() end),
-
-    -- Meta + right click to resize window
-    awful.button({metakey}, 3, function() awful.mouse.client.resize() end)
+  awful.button({}, 1, function(c) client.focus = c end),
+  awful.button({mod}, 1, function() awful.mouse.client.move() end),
+  awful.button({mod}, 2, function(c) c:kill() end),
+  awful.button({mod}, 3, function() awful.mouse.client.resize() end)
 )
 
 for i = 1, tags do
-    keys.globalkeys = gears.table.join(keys.globalkeys,
-        -- View tag
-        awful.key({metakey}, '#'..i + 9,
-                  function ()
-                        local tag = awful.screen.focused().tags[i]
-                        if tag then
-                           tag:view_only()
-                        end
-                  end,
-                  {description = 'View tag #'..i, group = 'Tags'}),
-
-        -- Move window to tag
-        awful.key({metakey, 'Shift'}, '#'..i + 9,
-                  function ()
-                      if client.focus then
-                          local tag = client.focus.screen.tags[i]
-                          if tag then
-                              client.focus:move_to_tag(tag)
-                          end
-                     end
-                  end,
-                  {description = 'Move focused window to tag #'..i, group = 'Tags'}),
-
-        -- Toggle tag display.
-        awful.key({metakey, 'Control'}, '#'..i + 9,
-            function ()
-                local screen = awful.screen.focused()
-                local tag = screen.tags[i]
-                if tag then
-                    awful.tag.viewtoggle(tag)
-                end
-            end,
-            {description = 'Toggle tag #' .. i, group = 'Tags'}))
+  keys.globalkeys = gears.table.join(keys.globalkeys,
+  -- View tag
+  awful.key({mod}, '#'..i + 9,
+    function ()
+      local tag = awful.screen.focused().tags[i]
+      if tag then
+         tag:view_only()
+      end
+    end),
+  -- Move window to tag
+  awful.key({mod, 'Shift'}, '#'..i + 9,
+    function ()
+      if client.focus then
+        local tag = client.focus.screen.tags[i]
+        if tag then
+          client.focus:move_to_tag(tag)
+        end
+     end
+    end),
+  awful.key({mod, 'Control'}, '#'..i + 9,
+    function ()
+      local screen = awful.screen.focused()
+      local tag = screen.tags[i]
+      if tag then
+        awful.tag.viewtoggle(tag)
+      end
+    end))
 end
 
 -- Set globalkeys

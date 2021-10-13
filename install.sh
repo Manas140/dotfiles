@@ -14,16 +14,21 @@ read -p "[*] DO YOU WANT TO PROCEED [Y/N] " allowed
 
 case $allowed in
   Y*|y*)
+    printf "${cg}[*] Copying Dotfiles\n"
     printf "${cb} [*] Copying Configs\n"
     cp -r config/* ~/.config
     cp -r home/.*rc ~/.
+    cp -r home/*.png ~/.
     printf "${cg} [*] Configs Copied\n"
-    printf "${cb} [*] Copying Fonts\n"
-    cp -r fonts/* ~/.fonts
-    printf "${cg} [*] Fonts Copied\n"
+    printf "${cb} [*] Copying Scripts\n"
+    cp -r bin/* ~/.local/bin/.
+    printf "${cg} [*] Scripts Copied\n"
     printf "${cb} [*] Copying Wallpapers\n"
     cp -r walls/* ~/Pictures/Wallpapers
     printf "${cg} [*] Wallpapers Copied\n"
+    printf "${cb} [*] Copying Fonts\n"
+    cp -r -n fonts/* ~/.fonts
+    printf "${cg} [*] Fonts Copied\n"
     printf "${cg}[*] Dotfiles Installed\n";;
   *) printf "${cr}[-] Aborting!\n";;
 esac

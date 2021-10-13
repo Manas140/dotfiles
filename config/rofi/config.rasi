@@ -30,6 +30,7 @@ prompt, entry {
   text-color: @fg;
   background-color: @al;
   padding: 10px;
+  border-radius: 10px;
 }
 
 listview {
@@ -51,6 +52,7 @@ prompt {
 element {
   background-color: @bg;
   padding: 10px 20px;
+  border-radius: 10px;
 }
 
 element.selected {

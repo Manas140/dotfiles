@@ -4,7 +4,10 @@
 #Prompt
 PS1='\033[1;32m\w/\033[0;0m '
 
-#Aliases
+#Exports 
+export PATH="$HOME/.local/bin/:$PATH"
+
+# Aliases
 alias ls='ls --color=auto'
 alias cls='clear'
 alias py='python3'

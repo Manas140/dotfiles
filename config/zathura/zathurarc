@@ -1,27 +1,35 @@
-set recolor true
-
-set default-bg '#181818'
-set default-fg '#d8d8d8'
-
-set recolor-lightcolor '#181818'
-set recolor-darkcolor '#E8E8E8'
-
 set font 'Fira Code'
 
-set inputbar-bg '#181818'
-set inputbar-fg '#E8E8E8'
+set default-bg                  "#151515"
+set default-fg                  "#D0D0D0"
 
-set statusbar-bg '#181818'
-set statusbar-fg '#E8E8E8'
+set statusbar-fg                "#D0D0D0"
+set statusbar-bg                "#151515"
 
-set notification-bg '#181818'
-set notification-fg '#E8E8E8'
+set inputbar-bg                 "#151515"
+set inputbar-fg                 "#D0D0D0"
 
-set highlight-color '#181818'
-set highlight-active-color '#d8d8d8'
+set notification-bg             "#151515"
+set notification-fg             "#D0D0D0"
 
-set completion-highlight-fg '#181818'
-set completion-highlight-bg '#d8d8d8'
+set notification-error-bg       "#151515"
+set notification-error-fg       "#AC4142"
 
-set completion-bg '#181818'
-set completion-fg '#d8d8d8'
+set notification-warning-bg     "#151515"
+set notification-warning-fg     "#AC4142"
+
+set highlight-color             "#F4BF75"
+set highlight-active-color      "#D8D8D8"
+
+set completion-bg               "#202020"
+set completion-fg               "#D0D0D0"
+
+set completion-highlight-fg     "#151515"
+set completion-highlight-bg     "#D0D0D0"
+
+set recolor-lightcolor          "#151515"
+set recolor-darkcolor           "#D0D0D0"
+
+set recolor                     "true"
+set recolor-keephue             "false"
+

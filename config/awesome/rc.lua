@@ -1,5 +1,5 @@
---     ___
---    /   |_      _____  _________  ________  ___
+--   ___
+--  /   |_    _____  _________  ________  ___
 --   / /| | | /| / / _ \/ ___/ __ \/ __  __ \/ _ \
 --  / ___ | |/ |/ /  __(__  ) /_/ / / / / / /  __/
 -- /_/  |_|__/|__/\___/____/\____/_/ /_/ /_/\___/
@@ -20,64 +20,64 @@ beautiful.init(theme_path)
 
 -- Layouts
 awful.layout.layouts = {
-    --awful.layout.suit.fair,
-    awful.layout.suit.tile,
-    awful.layout.suit.floating,
-    --awful.layout.suit.spiral.dwindle,
-    --awful.layout.suit.max,
-    --awful.layout.suit.magnifier,
-    --awful.layout.suit.tile.bottom,
-    --awful.layout.suit.tile.top,
-    --awful.layout.suit.corner.nw,
-    --awful.layout.suit.fair.horizontal,
-    --awful.layout.suit.spiral,
-    --awful.layout.suit.max.fullscreen,
-    --awful.layout.suit.corner.ne,
-    --awful.layout.suit.corner.sw,
-    --awful.layout.suit.corner.se,
+  --awful.layout.suit.fair,
+  awful.layout.suit.tile,
+  --awful.layout.suit.spiral.dwindle,
+  --awful.layout.suit.max,
+  --awful.layout.suit.magnifier,
+  --awful.layout.suit.tile.bottom,
+  --awful.layout.suit.tile.top,
+  --awful.layout.suit.corner.nw,
+  --awful.layout.suit.fair.horizontal,
+  --awful.layout.suit.spiral,
+  --awful.layout.suit.max.fullscreen,
+  --awful.layout.suit.corner.ne,
+  --awful.layout.suit.corner.sw,
+  --awful.layout.suit.corner.se,
+  awful.layout.suit.floating,
 }
 
 -- Virtual desktops/ Tabs
 awful.screen.connect_for_each_screen(function(s)
-    local tagTable = {'1', '2', '3', '4', '5'}
+  local tagTable = {'1', '2', '3', '4', '5'}
 
-    -- Uncomment this if not using custom tag names (no. of tags will be derived from `tags` variable set in keys.lua)
-    -- Also uncomment `keys.tags = tags` line in the Variables section in keys.lua!
-    local tagTable = {}
-    for i = 1, keys.tags do
-        table.insert(tagTable, tostring(i))
-    end
+  -- Uncomment this if not using custom tag names (no. of tags will be derived from `tags` variable set in keys.lua)
+  -- Also uncomment `keys.tags = tags` line in the Variables section in keys.lua!
+  local tagTable = {}
+  for i = 1, keys.tags do
+    table.insert(tagTable, tostring(i))
+  end
 
-    awful.tag(tagTable, s, awful.layout.layouts[1])
+  awful.tag(tagTable, s, awful.layout.layouts[1])
 end)
 
 awful.rules.rules = {
-    -- All windows
-    { rule = { },
-      properties = { border_width = beautiful.border_width,
-                     focus = awful.client.focus.filter,
-                     raise = true,
-                     keys = keys.clientkeys,
-                     buttons = keys.clientbuttons,
-                     screen = awful.screen.preferred,
-                     placement = awful.placement.no_overlap+awful.placement.no_offscreen
-                   }
-    },
+  -- All windows
+  { rule = { },
+    properties = { border_width = beautiful.border_width,
+           focus = awful.client.focus.filter,
+           raise = true,
+           keys = keys.clientkeys,
+           buttons = keys.clientbuttons,
+           screen = awful.screen.preferred,
+           placement = awful.placement.no_overlap+awful.placement.no_offscreen
+           }
+  },
 
-    -- Floating exceptions
-    { rule_any = {
-            class = {'Lxappearance', 'qt5ct'},
-            name = {'Event Tester'}, --xev
-            role = {'pop-up', 'GtkFileChooserDialog'},
-            type = {'dialog'}
-        },
-        properties = {floating = true}
-    }
+  -- Floating exceptions
+  { rule_any = {
+      class = {'Lxappearance', 'qt5ct'},
+      name = {'Event Tester'}, --xev
+      role = {'pop-up', 'GtkFileChooserDialog'},
+      type = {'dialog'}
+    },
+    properties = {floating = true}
+  }
 }
 
 -- Enable sloppy focus
 client.connect_signal('mouse::enter', function(c)
-    c:emit_signal('request::activate', 'mouse_enter', {raise = false})
+  c:emit_signal('request::activate', 'mouse_enter', {raise = false})
 end)
 
 -- Colored borders

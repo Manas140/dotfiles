@@ -1,46 +1,52 @@
-# terminal emulator
+#Apps
 super + Return
   kitty
 
-# program launcher
 super + @r
   rofi -show
 
-# make sxhkd reload its configuration files:
-super + Escape
-  pkill -USR1 -x sxhkd
-
-# screenshots
-super + Print
+#Screenshot
+Print
   flameshot gui
+
+#Workspaces
+super + {_,shift + }{1-9,0}
+  bspc {desktop -f,node -d} '^{1-9,10}'paces 
+
+super + shift + l
+  sh ~/.local/bin/lock
 
 super + shift + e
   bspc quit
 
-# restart bspwm
 super + shift + r
   bspc wm -r
 
-# close and kill
+#Hardware
+XF86AudioRaiseVolume 
+  pactl set-sink-volume @DEFAULT_SINK@ +5%
+XF86AudioLowerVolume 
+  pactl set-sink-volume @DEFAULT_SINK@ -5%
+XF86MonBrightnessUp
+  xbacklight +5
+XF86MonBrightnessDown
+  xbacklight -5
+
+#Window Management
+super + Tab
+  bspc node -t {floating,tiled}
+
 super + q
   bspc node -{c,k}
 
-#toggle layout
-super + {t,f}
-  bspc node -t {tiled,floating}
-
-#toggle monocle layout
-super + m
-  bspc desktop -l next
-
-#toggle window focus
 alt + Tab
   bspc node -f {next,prev}.local.!hidden.window
 
-# focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-  bspc {desktop -f,node -d} '^{1-9,10}'
+super + {Up,Down,Left,Right}
+  {bspc node -z top 10 10; bspc node -z bottom -10 -10, bspc node -z bottom 10 10; bspc node -z top -10 -10, bspc node -z left 10 10; bspc node -z right -10 -10, bspc node -z right 10 10; bspc node -z left -10 -10 }
 
-# move a floating window
-super + alt + {Left,Down,Up,Right}
-  bspc node -v {-20 0,0 20,0 -20,20 0}
+super + shift + {Up,Down,Left,Right}
+  bspc node -s {north,south,west,east}
+
+super + space
+  {bspc desktop -l monocle; bspc config bottom_padding 0; while pgrep polybar; do killall polybar; done, bspc desktop -l tiled; sh ~/.config/polybar/launch.sh}

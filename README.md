@@ -1,6 +1,10 @@
-Usage:
+Floating Usage:
 <p align="center">
-  <img src="preview/usage.png">
+  <img src="preview/floating.png"> 
+
+Tiled Usage:
+<p align="center"> 
+ <img src="preview/tiled.png">
 </p>
 
 Rofi:
@@ -8,25 +12,25 @@ Rofi:
   <img src="preview/rofi.png">
 </p>
 
-Casual:
+Dunst:
 <p align="center">
-  <img src="preview/music.png">
+  <img src="preview/dunst.png">
 </p>
 
 ```
-  WM: awesome, i3-gaps, bspwm
+  WM: awesome-wm, bspwm, i3-gaps  
   Bar: polybar
-  Compositor: picom
+  Compositor: picom-ibhwagan
   MusicPlayer: musikcube
   MusicVisualiser: cava
   PdfReader: zathura
-  ImageViewer: feh, sxiv
-  ScreenShot: flameshot, maim
+  ImageViewer: feh
+  ScreenShot: flameshot
   FileManager: ranger
-  Notification: dunst
+  Notification: dunst, notify-send
   Terminal: kitty, alacritty
   Font: Fira-Code, feather
   AppLauncher: rofi
-  Fetch: fetch
-  TextEditor: nvim, micro
+  Fetch: [fetch](https://github.com/Manas140/fetch)
+  TextEditor: nvim
 ```

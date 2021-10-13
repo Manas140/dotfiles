@@ -1,6 +1,9 @@
 #Prompt
 PS1="%F{green}%B%~/%b%f "
-export EDITOR=nvim
+
+#Exports 
+export PATH="$HOME/.local/bin/:$PATH"
+
 # Aliases
 alias ls='ls --color=auto'
 alias cls='clear'
