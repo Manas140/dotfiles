@@ -31,6 +31,7 @@ Dunst:
   Terminal: kitty, alacritty
   Font: Fira-Code, feather
   AppLauncher: rofi
+  LockScreen: i3lock-color
   Fetch: [fetch](https://github.com/Manas140/fetch)
   TextEditor: nvim
 ```
