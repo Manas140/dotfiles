@@ -14,7 +14,7 @@ super + {_,shift + }{1-9,0}
   bspc {desktop -f,node -d} '^{1-9,10}'paces 
 
 super + shift + l
-  sh ~/.local/bin/lock
+  sh $HOME/.local/bin/lock
 
 super + shift + e
   bspc quit
@@ -49,4 +49,4 @@ super + shift + {Up,Down,Left,Right}
   bspc node -s {north,south,west,east}
 
 super + space
-  {bspc desktop -l monocle; bspc config bottom_padding 0; while pgrep polybar; do killall polybar; done, bspc desktop -l tiled; sh ~/.config/polybar/launch.sh}
+  {bspc desktop -l monocle && bspc config bottom_padding 0 && while pgrep polybar; do pkill polybar; done, bspc desktop -l tiled && bspc config bottom_padding 35 && sh ~/.config/polybar/launch.sh }

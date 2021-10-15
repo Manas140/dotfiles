@@ -11,11 +11,14 @@ mod = 'Mod4'
 tags = 7
 keys.tags = tags   --Uncomment this if not using custom tag names
 terminal = 'kitty'
+lock = string.format('sh %s/.local/bin/lock', os.getenv('HOME'))
 
 -- Keybindings
 keys.globalkeys = gears.table.join(
   -- Awesome
   awful.key({mod, 'Shift'}, 'r', awesome.restart),
+  awful.key({mod, 'Shift'}, 'e', awesome.quit),
+  awful.key({mod, 'Shift'}, 'l', function() awful.util.spawn(lock) end),
 
   --Hardware
   awful.key({}, 'XF86MonBrightnessUp', function() awful.util.spawn('xbacklight +5') end),

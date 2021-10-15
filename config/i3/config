@@ -77,7 +77,7 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 
 #Others
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+l exec "lock"
+bindsym $mod+Shift+l exec sh $HOME/.local/bin/lock
 bindsym $mod+Shift+e exit
 
 #Rules
