@@ -40,7 +40,7 @@ super + q
   bspc node -{c,k}
 
 alt + Tab
-  bspc node -f {next,prev}.local.!hidden.window
+  bspc node -f next.local.!hidden.window
 
 super + {Up,Down,Left,Right}
   {bspc node -z top 10 10; bspc node -z bottom -10 -10, bspc node -z bottom 10 10; bspc node -z top -10 -10, bspc node -z left 10 10; bspc node -z right -10 -10, bspc node -z right 10 10; bspc node -z left -10 -10 }
