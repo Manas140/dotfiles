@@ -4,7 +4,7 @@ greet="Welcome, Back"
 color="151515"
 wrong_pass="Incorrect, Try Again"
 font="Fira Code"
-background="$HOME/lock.png"
+background="$HOME/.lock.png"
 
 i3lock \
   --nofork \
@@ -21,7 +21,7 @@ i3lock \
   --keyhlcolor=$color \
   --clock \
   --timecolor=$color \
-  --timestr="%H:%M" \
+  --timestr="%H:%M:%S" \
   --time-font="$font" \
   --timesize=72 \
   --timecolor=$color \

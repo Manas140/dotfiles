@@ -1,6 +1,6 @@
 configuration {
   modi: "drun";
-  font: "Fira Code 10";
+  font: "Fira Code Medium 10";
   disable-history: false;
   display-drun: "Search";
   drun-display-format: "{name}";
@@ -43,10 +43,8 @@ entry {
 }
 
 prompt {
-    background-color: @al;
-    text-color: @fg;
-    margin: 0 0 10px 0;
-    padding: 10px 20px;
+  margin: 0 0 10px 0;
+  padding: 10px 20px;
 }
 
 element {
@@ -56,6 +54,5 @@ element {
 }
 
 element.selected {
-  background-color: @fg;
-  text-color: @bg;
+  background-color: @al;
 }

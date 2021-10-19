@@ -18,7 +18,7 @@ case $allowed in
     printf "${cb} [*] Copying Configs\n"
     cp -r config/* ~/.config
     cp -r home/.*rc ~/.
-    cp -r home/*.png ~/.
+    cp -r home/.*png ~/.
     printf "${cg} [*] Configs Copied\n"
     printf "${cb} [*] Copying Scripts\n"
     cp -r bin/* ~/.local/bin/.

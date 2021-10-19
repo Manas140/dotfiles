@@ -1,2 +1,2 @@
 #!/bin/sh
-xbps-install -Mun | wc -l && sleep 180
+xbps-install -Mun | wc -l

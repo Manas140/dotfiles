@@ -5,7 +5,7 @@ local theme = {}
 
 theme.font          = 'Fira Code Medium 10'
 
-theme.useless_gap   = 5
+theme.useless_gap   = 7.5
 theme.border_width  = 0
 theme.border_normal = "#151515"
 theme.border_focus  = "#151515"
