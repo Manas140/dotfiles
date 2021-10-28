@@ -4,7 +4,7 @@ set $alt Mod1
 
 #Settings
 font pango:Fira Code 10
-gaps inner 15
+gaps inner 10
 smart_gaps on
 smart_gaps inverse_outer
 smart_borders on

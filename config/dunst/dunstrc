@@ -1,7 +1,7 @@
 [global]
     monitor = 0
     follow = mouse
-    geometry = "300x100-15-60"
+    geometry = "275x75-10-55"
     indicate_hidden = yes
     shrink = no
     notification_height = 0
@@ -13,7 +13,7 @@
     sort = yes
     idle_threshold = 120
 
-    font = Fira Code Medium 10
+    font = JetBrains Mono Medium 10
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"
@@ -38,7 +38,7 @@
     mouse_middle_click = close_all
     
     icon_position = left
-    min_icon_size = 64
+    min_icon_size = 48
 
 [urgency_low]
     background = "#90A959"

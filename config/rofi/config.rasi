@@ -1,58 +1,93 @@
 configuration {
   modi: "drun";
-  font: "Fira Code Medium 10";
-  disable-history: false;
-  display-drun: "Search";
+  font: "JetBrains Mono 10";
+  show-icons: true;
+  display-drun: "";
   drun-display-format: "{name}";
+  sidebar-mode: false;
 }
 
 @theme "/dev/null"
 
-element-text, element-icon {
-  background-color: inherit;
-  text-color:       inherit;
-}
-
-@import "colors.rasi"
-
 * {
+  bg: #151515;
+  fg: #d0d0d0;
+  al: #1f1f1f;
+  font: "JetBrains Mono 10";
   background-color: @bg;
   text-color: @fg;
 }
 
 window {
-  padding: 20px;
-  height: 60%;
-  width: 60%;
-}
-
-prompt, entry {
-  text-color: @fg;
-  background-color: @al;
-  padding: 10px;
   border-radius: 10px;
-}
-
-listview {
-  columns: 2;
-  lines: 10;
-}
-
-entry {
-  margin: 0 0 10px 10px;
+  width: 50%;
+  padding: 10px;
 }
 
 prompt {
-  margin: 0 0 10px 0;
-  padding: 10px 20px;
+  background-color: @al;
+  enabled: true;
+  padding: 0.5% 10px 0% -0.5%;
+}
+
+entry {
+  background-color: @al;
+  placeholder-color: @fg;
+  expand: true;
+  horizontal-align: 0;
+  padding: 0.15% 0% 0% 0%;
+}
+
+inputbar {
+  children: [ prompt, entry ];
+  background-color: @al;
+  expand: false;
+  border-radius: 10px;
+  margin: 0%;
+  padding: 10px;
+}
+
+listview {
+  columns: 4;
+  lines: 3;
+  spacing: 0%;
+  cycle: false;
+  dynamic: true;
+  layout: vertical;
+}
+
+mainbox {
+  border-radius: 0%;
+  children: [ inputbar, listview ];
+  spacing: 2%;
+  padding: 2% 1% 2% 1%;
 }
 
 element {
-  background-color: @bg;
-  padding: 10px 20px;
-  border-radius: 10px;
+  orientation: vertical;
+  border-radius: 0%;
+  padding: 2% 0% 2% 0%;
 }
 
-element.selected {
+element-icon {
+  size: 48px;
+  border: 0px;
+  horizontal-align: 0.5;
+}
+
+element-text {
+  expand: true;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+  margin: 0.5% 0.5% -0.5% 0.5%;
+}
+
+element-text, element-icon {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+element selected {
   background-color: @al;
+  border-radius: 10px;
 }

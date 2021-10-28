@@ -49,4 +49,4 @@ super + shift + {Up,Down,Left,Right}
   bspc node -s {north,south,west,east}
 
 super + space
-  {bspc desktop -l monocle && bspc config bottom_padding 0 && while pgrep polybar; do pkill polybar; done, bspc desktop -l tiled && bspc config bottom_padding 45 && sh ~/.config/polybar/launch.sh }
+  bspc node -t \~fullscreen

@@ -3,8 +3,8 @@
 greet="Welcome, Back"
 color="151515"
 wrong_pass="Incorrect, Try Again"
-font="Fira Code"
-background="$HOME/.lock.png"
+font="JetBrains Mono"
+background="$HOME/Pictures/Wallpapers/2.png"
 
 i3lock \
   --nofork \
@@ -38,4 +38,4 @@ i3lock \
   --wrongsize=24 \
   --wrongtext="$wrong_pass" \
   --wrongcolor=$color \
-  -i "$background" 
+  -i $background

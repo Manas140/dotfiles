@@ -1,8 +1,8 @@
 # Terminal Emulator Settings
 window:
   padding:
-    x: 15
-    y: 15
+    x: 20
+    y: 20
   scrolling:
     history: 15
 
@@ -13,22 +13,22 @@ shell:
 # Font
 font:
   normal:
-    family: Fira Code
+    family: JetBrains Mono
     style: Medium
 
   bold:
-    family: Fira Code
+    family: JetBrains Mono
     style: Bold
 
   italic:
-    family: Fira Code
+    family: JetBrains Mono
     style: Italic
 
   bold_italic:
-    family: Fira Code
+    family: JetBrains Mono
     style: Bold Italic
 
-  size: 10
+  size: 9.5
 
 # Colors
 colors:
@@ -50,7 +50,7 @@ colors:
 
   # Bright colors
   bright:
-    black:   '#252525'
+    black:   '#1f1f1f'
     red:     '#AC4142'
     green:   '#90A959'
     yellow:  '#F4BF75'

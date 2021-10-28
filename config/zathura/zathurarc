@@ -1,4 +1,4 @@
-set font 'Fira Code'
+set font 'JetBrains Mono'
 
 set default-bg                  "#151515"
 set default-fg                  "#D0D0D0"
@@ -21,7 +21,7 @@ set notification-warning-fg     "#AC4142"
 set highlight-color             "#F4BF75"
 set highlight-active-color      "#D8D8D8"
 
-set completion-bg               "#202020"
+set completion-bg               "#1f1f1f"
 set completion-fg               "#D0D0D0"
 
 set completion-highlight-fg     "#151515"
