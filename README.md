@@ -28,8 +28,7 @@ Lock:
   ./install.sh 
 ```
 
-#KeyBinds
-
+# KeyBinds
 ```
   super + Return kitty
 
@@ -51,9 +50,9 @@ Lock:
 
   alt + Tab toggle window focus
 
-  super + Arrows(Up,Down,Left,Right) resize window
+  super + Arrows [Up,Down,Left,Right] resize window
 
-  super + shift + {Up,Down,Left,Right} swap window
+  super + shift + [Up,Down,Left,Right] swap window
 
   super + space toggle fullscreen
 ```
@@ -73,12 +72,11 @@ Lock:
 ```
 
 # Others
-```  
-  ImageViewer: feh, sxiv
+<pre><code>  ImageViewer: feh
   MusicPlayer: musikcube
-  Fetch: fetch (https://github.com/Manas140/fetch)
+  Fetch: <a href="https://github.com/Manas140/fetch">fetch</a>
   MusicVisualiser: cava
   ScreenShot: flameshot, maim
-  TextEditor: nvim (config: NvChad)
+  TextEditor: nvim - <a href="https://github.com/Nvchad">Nvchad</a>
   FileManager: pcmanfm, ranger
-```
+</code></pre>
