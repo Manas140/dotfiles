@@ -1,10 +1,9 @@
 configuration {
   modi: "drun";
-  font: "JetBrains Mono 10";
-  show-icons: true;
-  display-drun: "";
+  display-drun: "";
   drun-display-format: "{name}";
-  sidebar-mode: false;
+  font: "Jetbrains Mono 10";
+  show-icons: true;
 }
 
 @theme "/dev/null"
@@ -12,82 +11,68 @@ configuration {
 * {
   bg: #151515;
   fg: #d0d0d0;
-  al: #1f1f1f;
-  font: "JetBrains Mono 10";
+  alt: #1c1c1c;
+  rad: 10px;
+
   background-color: @bg;
   text-color: @fg;
 }
 
-window {
-  border-radius: 10px;
-  width: 50%;
-  padding: 10px;
-}
-
-prompt {
-  background-color: @al;
-  enabled: true;
-  padding: 0.5% 10px 0% -0.5%;
-}
-
-entry {
-  background-color: @al;
-  placeholder-color: @fg;
-  expand: true;
-  horizontal-align: 0;
-  padding: 0.15% 0% 0% 0%;
+mainbox {
+  children: [ inputbar, listview ];
+  padding: 1.5em;
+  spacing: 1em;
 }
 
 inputbar {
   children: [ prompt, entry ];
-  background-color: @al;
-  expand: false;
-  border-radius: 10px;
-  margin: 0%;
-  padding: 10px;
+  border-radius: @rad;
+  background-color: @alt;
+}
+
+prompt, entry, element selected {
+  vertical-align: 0.5;
+  background-color: @alt;
+}
+
+prompt {
+   padding: 1.5%;
+   font: "feather 14";
+}
+
+entry {
+  blink: false;
+  padding: 0 1.5% 0 0;
+  placeholder: "Search through apps";
+  placeholder-color: grey;
 }
 
 listview {
-  columns: 4;
-  lines: 3;
-  spacing: 0%;
-  cycle: false;
-  dynamic: true;
   layout: vertical;
-}
-
-mainbox {
-  border-radius: 0%;
-  children: [ inputbar, listview ];
-  spacing: 2%;
-  padding: 2% 1% 2% 1%;
+  lines: 3;
+  columns: 4;
+  cycle: false;
 }
 
 element {
   orientation: vertical;
-  border-radius: 0%;
-  padding: 2% 0% 2% 0%;
-}
-
-element-icon {
-  size: 48px;
-  border: 0px;
-  horizontal-align: 0.5;
-}
-
-element-text {
-  expand: true;
-  horizontal-align: 0.5;
-  vertical-align: 0.5;
-  margin: 0.5% 0.5% -0.5% 0.5%;
+  padding: 1em;
+  border-radius: @rad;
 }
 
 element-text, element-icon {
+  horizontal-align: 0.5;
   background-color: inherit;
-  text-color: inherit;
 }
 
-element selected {
-  background-color: @al;
-  border-radius: 10px;
+element-text { expand: true; }
+element-icon { size: 48px; }
+
+listview, element, element selected, element-text, element-icon {
+  cursor: pointer;
 }
+
+entry {
+  cursor: text;
+}
+
