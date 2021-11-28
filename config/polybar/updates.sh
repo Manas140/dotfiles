@@ -1,2 +1,8 @@
 #!/bin/sh
-xbps-install -Mun | wc -l
+
+for a in $(ls /bin); do
+  case $a in
+    xbps-install) xbps-install -Mun | wc -l;;
+    pacman) pacman -Qu | wc -l;;
+  esac
+done
