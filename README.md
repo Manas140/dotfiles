@@ -66,7 +66,7 @@ Lock:
 # To get update count in Polybar
 
 ```
-  After installation open **.config/polybar/updtaes.sh** in a text editor and then uncomment any one of the lines that either use xbps or pacman as per your wish on which you want to use.
+  After installation open .config/polybar/updtaes.sh in a text editor and then uncomment any one of the lines that either use xbps or pacman as per your wish on which you want to use.
 ```
 
 # Stuffs In Rice
