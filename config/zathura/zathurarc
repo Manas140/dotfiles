@@ -1,35 +1,48 @@
-set font 'JetBrains Mono'
+set selection-clipboard clipboard
+set window-title-home-tilde true
+set statusbar-home-tilde true
+set adjust-open "best-fit"
 
-set default-bg                  "#151515"
-set default-fg                  "#D0D0D0"
+set font "Jetbrains Mono"
 
-set statusbar-fg                "#D0D0D0"
-set statusbar-bg                "#151515"
+set notification-error-bg "#B66467"
+set notification-error-fg "#E8E3E3"
+set notification-warning-bg "#D9BC8C" 
+set notification-warning-fg "#1C1C1C"
+set notification-bg "#151515"
+set notification-fg "#E8E3E3"
 
-set inputbar-bg                 "#151515"
-set inputbar-fg                 "#D0D0D0"
+set completion-bg "#151515"
+set completion-fg "#474747"
+set completion-group-bg "#151515"
+set completion-group-fg "#474747"
+set completion-highlight-bg "#1C1C1C"
+set completion-highlight-fg "#E8E3E3"
 
-set notification-bg             "#151515"
-set notification-fg             "#D0D0D0"
+set index-bg "#151515"
+set index-fg "#E8E3E3"
+set index-active-bg "#191919"
+set index-active-fg "#E8E3E3"
 
-set notification-error-bg       "#151515"
-set notification-error-fg       "#AC4142"
+set inputbar-bg "#151515"
+set inputbar-fg "#E8E3E3"
+set statusbar-bg "#151515"
+set statusbar-fg "#E8E3E3"
 
-set notification-warning-bg     "#151515"
-set notification-warning-fg     "#AC4142"
+set highlight-color "#D9BC8C" 
+set highlight-active-color "#A988B0"
 
-set highlight-color             "#F4BF75"
-set highlight-active-color      "#D8D8D8"
+set default-bg "#151515"
+set default-fg "#E8E3E3"
 
-set completion-bg               "#1f1f1f"
-set completion-fg               "#D0D0D0"
+set render-loading true
+set render-loading-fg "#151515"
+set render-loading-bg "#E8E3E3"
 
-set completion-highlight-fg     "#151515"
-set completion-highlight-bg     "#D0D0D0"
+set recolor-lightcolor "#151515"
+set recolor-darkcolor "#E8E3E3"
 
-set recolor-lightcolor          "#151515"
-set recolor-darkcolor           "#D0D0D0"
-
-set recolor                     "true"
-set recolor-keephue             "false"
-
+set adjust-open width
+set recolor true
+map <C-Tab> toggle_statusbar
+set guioptions ""

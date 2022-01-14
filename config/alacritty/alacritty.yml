@@ -30,34 +30,5 @@ font:
 
   size: 9.5
 
-# Colors
-colors:
-  # Default colors
-  primary:
-    background: '#151515'
-    foreground: '#D0D0D0'
-
-  # Normal colors
-  normal:
-    black:   '#151515'
-    red:     '#AC4142'
-    green:   '#90A959'
-    yellow:  '#F4BF75'
-    blue:    '#6A9FB5'
-    magenta: '#AA759F'
-    cyan:    '#75B5AA'
-    white:   '#D0D0D0'
-
-  # Bright colors
-  bright:
-    black:   '#1f1f1f'
-    red:     '#AC4142'
-    green:   '#90A959'
-    yellow:  '#F4BF75'
-    blue:    '#6A9FB5'
-    magenta: '#AA759F'
-    cyan:    '#75B5AA'
-    white:   '#D0D0D0'
-
-# Apply Settings without relaunching
-live_config_reload: true
+import:
+  - ~/.config/alacritty/paradise.yml

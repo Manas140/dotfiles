@@ -8,7 +8,7 @@ PS1='\033[1;32m\w/\033[0;0m '
 export PATH="$HOME/.local/bin/:$PATH"
 
 # Aliases
-alias ls='ls --color=auto'
+alias ls='ls --color=auto -t'
 alias cls='clear'
 alias py='python3'
 alias pip='pip3'

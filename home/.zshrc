@@ -5,7 +5,7 @@ PS1="%F{green}%B%~/%b%f "
 export PATH="$HOME/.local/bin/:$PATH"
 
 # Aliases
-alias ls='ls --color=auto'
+alias ls='ls --color=auto -t'
 alias cls='clear'
 alias py='python3'
 alias pip='pip3'

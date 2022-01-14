@@ -1,10 +1,10 @@
 #!/bin/sh
 
 greet="Welcome, Back"
-color="151515"
+color="#E8E3E3"
 wrong_pass="Incorrect, Try Again"
 font="JetBrains Mono"
-background="$HOME/Pictures/Wallpapers/2.png"
+background="$HOME/Pictures/Wallpapers/6.png"
 
 i3lock \
   --nofork \

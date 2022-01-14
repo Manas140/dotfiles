@@ -13,9 +13,7 @@ dir="$HOME/.config $HOME/Pictures/Wallpapers $HOME/.local/bin $HOME/.fonts"
 case $allowed in
   Y*|y*)
     for a in $dir; do 
-      if ! [ -d $a ]; then 
-        mkdir $a 
-      fi
+      mkdir -p $a 
     done
     printf "${cg}[*] Copying Dotfiles\n"
     printf "${cb} [*] Copying Configs\n"

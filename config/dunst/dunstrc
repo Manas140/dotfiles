@@ -1,13 +1,14 @@
 [global]
   monitor = 0
   follow = mouse
-  width = 275
-  height = 100
-  offset = 10x55
-  origin = bottom-right
   shrink = no
   padding = 20
   horizontal_padding = 20
+  
+  width = 275
+  height = 100
+  offset = 10x50
+  origin = bottom-right
 
   frame_width = 0
   separator_height = 0
@@ -39,16 +40,16 @@
   mouse_right_click = close_all
 
 [urgency_low]
-  background = "#90a959"
+  background = "#8C977D"
   foreground = "#151515"
   timeout = 5
 
 [urgency_normal]
   background = "#151515"
-  foreground = "#d0d0d0"
+  foreground = "#E8E3E3"
   timeout = 10
 
 [urgency_critical]
-  background = "#ac4142"
+  background = "#B66467"
   foreground = "#151515"
   timeout = 20
