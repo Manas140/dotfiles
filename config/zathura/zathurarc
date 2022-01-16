@@ -5,44 +5,9 @@ set adjust-open "best-fit"
 
 set font "Jetbrains Mono"
 
-set notification-error-bg "#B66467"
-set notification-error-fg "#E8E3E3"
-set notification-warning-bg "#D9BC8C" 
-set notification-warning-fg "#1C1C1C"
-set notification-bg "#151515"
-set notification-fg "#E8E3E3"
-
-set completion-bg "#151515"
-set completion-fg "#474747"
-set completion-group-bg "#151515"
-set completion-group-fg "#474747"
-set completion-highlight-bg "#1C1C1C"
-set completion-highlight-fg "#E8E3E3"
-
-set index-bg "#151515"
-set index-fg "#E8E3E3"
-set index-active-bg "#191919"
-set index-active-fg "#E8E3E3"
-
-set inputbar-bg "#151515"
-set inputbar-fg "#E8E3E3"
-set statusbar-bg "#151515"
-set statusbar-fg "#E8E3E3"
-
-set highlight-color "#D9BC8C" 
-set highlight-active-color "#A988B0"
-
-set default-bg "#151515"
-set default-fg "#E8E3E3"
-
-set render-loading true
-set render-loading-fg "#151515"
-set render-loading-bg "#E8E3E3"
-
-set recolor-lightcolor "#151515"
-set recolor-darkcolor "#E8E3E3"
-
 set adjust-open width
 set recolor true
 map <C-Tab> toggle_statusbar
 set guioptions ""
+
+include paradise
