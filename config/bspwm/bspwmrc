@@ -1,8 +1,8 @@
 #! /bin/sh
 
 #Autostart
+picom -b &
 killall sxhkd; sxhkd &
-killall picom; picom &
 killall dunst; dunst &
 feh --bg-fill -r -z ~/Pictures/Wallpapers &
 redshift -x && redshift -O 4000k &

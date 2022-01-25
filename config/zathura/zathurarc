@@ -7,6 +7,7 @@ set font "Jetbrains Mono"
 
 set adjust-open width
 set recolor true
+set recolor-keephue true
 map <C-Tab> toggle_statusbar
 set guioptions ""
 
