@@ -4,7 +4,7 @@ greet="Welcome, Back"
 color="#E8E3E3"
 wrong_pass="Incorrect, Try Again"
 font="JetBrains Mono"
-background="$HOME/Pictures/Wallpapers/6.png"
+background="$HOME/Pictures/Wallpapers/5.png"
 
 i3lock \
   --nofork \
@@ -21,9 +21,9 @@ i3lock \
   --keyhl-color=$color \
   --clock \
   --time-color=$color \
-  --time-str="%H:%M:%S" \
+  --time-str="%H:%M" \
   --time-font="$font" \
-  --time-size=72 \
+  --time-size=75 \
   --time-color=$color \
   --date-color=$color \
   --date-str="%A, %d %B" \
@@ -38,4 +38,5 @@ i3lock \
   --wrong-size=24 \
   --wrong-text="$wrong_pass" \
   --wrong-color=$color \
-  -i $background
+  -i $background \
+  --time-pos="175:668" \

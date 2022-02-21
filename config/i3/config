@@ -18,7 +18,7 @@ default_border none
 exec_always --no-startup-id picom -b
 exec_always --no-startup-id redshift -x && redshift -O 4000k
 exec_always --no-startup-id killall dunst; dunst
-exec_always --no-startup-id feh --bg-fill -r -z ~/Pictures/Wallpapers
+exec_always --no-startup-id feh --bg-fill -r -z $HOME/Pictures/Wallpapers
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #Apps

@@ -1,10 +1,10 @@
-#! /bin/sh
+#!/bin/sh
 
 #Autostart
 picom -b &
 killall sxhkd; sxhkd &
 killall dunst; dunst &
-feh --bg-fill -r -z ~/Pictures/Wallpapers &
+feh --bg-fill -r -z $HOME/Pictures/Wallpapers &
 redshift -x && redshift -O 4000k &
 xsetroot -cursor_name left_ptr &
 $HOME/.config/polybar/launch.sh &

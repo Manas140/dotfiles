@@ -2,7 +2,11 @@
 
 for a in $(ls /bin); do
   case $a in
-    xbps-install) xbps-install -Mun | wc -l;;
-    pacman) pacman -Qu | wc -l;;
+    xbps-install) b=$(xbps-install -Mun | wc -l);;
+    pacman) b=$(pacman -Qu | wc -l);;
   esac
 done
+
+if [[ "$b" -ne "0" ]]; then 
+  printf "";
+fi
