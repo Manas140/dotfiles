@@ -10,19 +10,15 @@ configuration {
 * {
   bg: #121212;
   fg: #E8E3E3;
-  al: #181818;
-  rad: 0.25em; 
-  border-radius: @rad;
+  al: #424242;
   background-color: @bg;
   text-color: @fg;
 }
 
 window {
-  border-radius: 0;
   location: north west;
   width: 25%;
-  height: 95%;
-  /* height: 100%; */
+  height: 100%;
   spacing: 0;
   orientation: horizontal;
   children: [ box ];
@@ -35,16 +31,16 @@ box {
   children: [ entry, listview ];
 }
 entry {
-  background-color: @al;
   placeholder: "Search...";
   expand: false;
   padding: 0.75em;
 }
 element {
+  text-color: @al;
   padding: 0.75em;
 }
 element selected {
-  background-color: @al;
+  text-color: @fg;
 }
 element-text, element-icon {
   background-color: inherit;

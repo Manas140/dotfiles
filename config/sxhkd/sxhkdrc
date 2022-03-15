@@ -50,3 +50,6 @@ super + shift + {Up,Down,Left,Right}
 
 super + space
   bspc node -t \~fullscreen
+
+super + m 
+  bspc desktop -l next
