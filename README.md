@@ -18,7 +18,7 @@
 ```
 
 # KeyBinds
-| Key | Action|
+| Key | Action |
 | ----- | ----- |
 | super + Return | kitty |
 | super + r | rofi |
@@ -33,6 +33,7 @@
 | super + Arrows [Up,Down,Left,Right] | resize window |
 | super + shift + [Up,Down,Left,Right] | swap window |
 | super + space | toggle fullscreen |
+| super + m | toggle monocle |
 
 # Stuffs In Rice
 ```
@@ -49,8 +50,7 @@
 ```
 
 # Others
-<pre><code>  
-  ColorScheme: <a href="https://github.com/Manas140/paradise">Paradise</a>
+<pre><code>  ColorScheme: <a href="https://github.com/Manas140/paradise">Paradise</a>
   Fetch: <a href="https://github.com/Manas140/fetch">fetch</a>
   FileManager: pcmanfm, ranger
   ImageViewer: feh
@@ -58,5 +58,5 @@
   MusicVisualiser: cava
   ScreenShot: flameshot, maim
   TextEditor: <a href="https://github.com/Nvchad">Nvchad</a>
-  WebBrowser: Firefox with <a href="https://github.com/migueravila/SimpleFox">SimpleFox UserStyle</a>, Chromium(Just for webDev)
+  WebBrowser: Firefox with <a href="https://github.com/migueravila/SimpleFox">SimpleFox UserStyle</a>, Chromium
 </code></pre>
