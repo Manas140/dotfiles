@@ -5,6 +5,9 @@ super + Return
 super + @r
   rofi -show
 
+super + @b
+  firefox
+
 #Screenshot
 Print
   flameshot gui

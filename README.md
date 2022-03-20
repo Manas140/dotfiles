@@ -11,9 +11,24 @@
   <img src="preview/preview.png">
 </p>
 
+<details><summary>ShowCase</summary>
+
+- Dunst
+
+  <img src="preview/dunst.png">
+
+- Polybar
+
+  <img src="preview/polybar.png">
+
+- Lock
+
+  <img src="preview/lock.png">
+</details>
+
 # Installation
 ```
-  git clone https://github.com/Manas140/dotfiles.git && cd dotfiles
+  git clone https://github.com/Manas140/dotfiles.git && cd dotfiles;
   ./install.sh 
 ```
 
@@ -22,6 +37,7 @@
 | ----- | ----- |
 | super + Return | kitty |
 | super + r | rofi |
+| super + b | firefox |
 | Print | flameshot |
 | super + shift + [1-9] | focus on desktop 1-9 |
 | super + shift + l | lock screen (i3 lock) |
@@ -30,33 +46,31 @@
 | super + Tab | toggle floating/tiling |
 | super + q | kill focused window |
 | alt + Tab | toggle window focus |
-| super + Arrows [Up,Down,Left,Right] | resize window |
-| super + shift + [Up,Down,Left,Right] | swap window |
 | super + space | toggle fullscreen |
 | super + m | toggle monocle |
+| super + Arrows [Up,Down,Left,Right] | resize window |
+| super + shift + [Up,Down,Left,Right] | swap window |
+
 
 # Stuffs In Rice
-```
-  WM: awesome-wm, bspwm, i3-gaps  
-  Bar: polybar
-  Compositor: picom-ibhwagan
-  AppLauncher: rofi
-  Font: JetBrains Mono, feather
-  LockScreen: i3lock-color
-  Notification: dunst
-  PdfReader: zathura
-  Shell: bash, zsh
-  Terminal: alacritty, kitty
-```
+- WM: awesome-wm, bspwm, i3-gaps
+- Bar: polybar
+- Compositor: picom-ibhwagan
+- AppLauncher: rofi
+- Font: JetBrains Mono, Material
+- LockScreen: i3lock-color
+- Notification: dunst
+- PdfReader: zathura
+- Shell: bash, zsh
+- Terminal: alacritty, kitty
 
-# Others
-<pre><code>  ColorScheme: <a href="https://github.com/Manas140/paradise">Paradise</a>
-  Fetch: <a href="https://github.com/Manas140/fetch">fetch</a>
-  FileManager: pcmanfm, ranger
-  ImageViewer: feh
-  MusicPlayer: musikcube
-  MusicVisualiser: cava
-  ScreenShot: flameshot, maim
-  TextEditor: <a href="https://github.com/Nvchad">Nvchad</a>
-  WebBrowser: Firefox with <a href="https://github.com/migueravila/SimpleFox">SimpleFox UserStyle</a>, Chromium
-</code></pre>
+## Others
+- ColorScheme: [Paradise](https://github.com/Manas140/paradise)
+- Fetch: [fetch](https://github.com/Manas140/fetch)
+- FileManager: pcmanfm
+- ImageViewer: feh
+- MusicPlayer: musikcube
+- MusicVisualiser: cava
+- ScreenShot: flameshot, maim
+- TextEditor: nvim, lite-xl
+- WebBrowser: Firefox with [SimpleFox](https://github.com/migueravila/SimpleFox), Chromium

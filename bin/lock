@@ -4,7 +4,7 @@ greet="Welcome, Back"
 color="#E8E3E3"
 wrong_pass="Incorrect, Try Again"
 font="JetBrains Mono"
-background="$HOME/Pictures/Wallpapers/5.png"
+background="$HOME/.lock.png"
 
 i3lock \
   --nofork \
