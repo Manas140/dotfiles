@@ -8,28 +8,13 @@
 </p>
 
 <p align="center">
-  <img src="preview/preview.png">
+  <img src="preview.png">
 </p>
-
-<details><summary>ShowCase</summary>
-
-- Dunst
-
-  <img src="preview/dunst.png">
-
-- Polybar
-
-  <img src="preview/polybar.png">
-
-- Lock
-
-  <img src="preview/lock.png">
-</details>
 
 # Installation
 ```
-  git clone https://github.com/Manas140/dotfiles.git && cd dotfiles;
-  ./install.sh 
+git clone https://github.com/Manas140/dotfiles.git && cd dotfiles
+./install.sh 
 ```
 
 # KeyBinds
@@ -53,24 +38,26 @@
 
 
 # Stuffs In Rice
-- WM: awesome-wm, bspwm, i3-gaps
-- Bar: polybar
-- Compositor: picom-ibhwagan
-- AppLauncher: rofi
-- Font: JetBrains Mono, Material
-- LockScreen: i3lock-color
-- Notification: dunst
-- PdfReader: zathura
-- Shell: bash, zsh
-- Terminal: alacritty, kitty
+  - AppLauncher: rofi
+  - Bar: polybar
+  - Compositor: picom-ibhwagan
+  - Font: JetBrains Mono, Material
+  - LockScreen: i3lock-color
+  - Notification: dunst
+  - PdfReader: zathura
+  - Shell: bash, zsh
+  - Terminal: alacritty, kitty
+  - TextEditor: lite-xl
+  - WindowManager: awesome-wm, bspwm, i3-gaps
 
 ## Others
-- ColorScheme: [Paradise](https://github.com/Manas140/paradise)
-- Fetch: [fetch](https://github.com/Manas140/fetch)
-- FileManager: pcmanfm
-- ImageViewer: feh
-- MusicPlayer: musikcube
-- MusicVisualiser: cava
-- ScreenShot: flameshot, maim
-- TextEditor: nvim, lite-xl
-- WebBrowser: Firefox with [SimpleFox](https://github.com/migueravila/SimpleFox), Chromium
+  - ColorScheme: [paradise](https://github.com/Manas140/paradise)
+  - Fetch: [fetch](https://github.com/Manas140/fetch)
+  - FileManager: pcmanfm
+  - ImageViewer: feh
+  - MusicPlayer: musikcube
+  - MusicVisualiser: cava
+  - ScreenShot: flameshot, maim
+  - TextEditor: nvim
+  - VideoPlayer: mpv
+  - WebBrowser: firefox with [SimpleFox](https://github.com/migueravila/SimpleFox), chromium

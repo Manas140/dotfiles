@@ -6,6 +6,7 @@ PS1='\033[1;32m\w/\033[0;0m '
 
 #Exports 
 export PATH="$HOME/.local/bin/:$PATH"
+export MICRO_TRUECOLOR=1
 
 # Aliases
 alias ls='ls --color=auto -t'

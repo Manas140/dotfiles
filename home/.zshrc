@@ -3,6 +3,7 @@ PS1="%F{green}%B%~/%b%f "
 
 #Exports 
 export PATH="$HOME/.local/bin/:$PATH"
+export MICRO_TRUECOLOR=1
 
 # Aliases
 alias ls='ls --color=auto -t'

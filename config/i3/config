@@ -81,4 +81,4 @@ bindsym $mod+Shift+e exit
 
 #Rules
 for_window[class="feh"] floating toggle
-for_window[class="sxiv"] floating toggle
+for_window[class="mpv"] floating toggle
