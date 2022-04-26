@@ -9,6 +9,9 @@ export PATH="$HOME/.local/bin/:$PATH"
 export MICRO_TRUECOLOR=1
 
 # Aliases
+alias gp='git push'
+alias ga='git add -v'
+alias gc='git commit'
 alias ls='ls --color=auto -t'
 alias cls='clear'
 alias py='python3'
