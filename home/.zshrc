@@ -1,14 +1,14 @@
 #Prompt
-PS1="%F{green}%B%~/%b%f "
+PS1="%F{green}%B%~%b%f "
 
 #Exports 
 export PATH="$HOME/.local/bin/:$PATH"
 export MICRO_TRUECOLOR=1
 
 # Aliases
-alias gp='git push'
+alias gp='git push -v'
 alias ga='git add -v'
-alias gc='git commit'
+alias gc='git commit -v'
 alias ls='ls --color=auto -t'
 alias cls='clear'
 alias py='python3'
@@ -41,3 +41,4 @@ bindkey "^A" beginning-of-line
 bindkey "^Q" end-of-line
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+bindkey "5~" delete-word

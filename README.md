@@ -20,44 +20,42 @@ git clone https://github.com/Manas140/dotfiles.git && cd dotfiles
 # KeyBinds
 | Key | Action |
 | ----- | ----- |
-| super + Return | kitty |
-| super + r | rofi |
-| super + b | firefox |
-| Print | flameshot |
-| super + shift + [1-9] | focus on desktop 1-9 |
-| super + shift + l | lock screen (i3 lock) |
-| super + shift + e | exit wm |
-| super + shift + r | restart wm |
-| super + Tab | toggle floating/tiling |
-| super + q | kill focused window |
-| alt + Tab | toggle window focus |
-| super + space | toggle fullscreen |
-| super + m | toggle monocle |
-| super + Arrows [Up,Down,Left,Right] | resize window |
-| super + shift + [Up,Down,Left,Right] | swap window |
+| Super + Return | kitty |
+| Super + b | firefox |
+| Super + r | rofi |
+| Print | screenshot menu |
+| Super + p | power menu |
+| Super + Print | powermenu |
+| Super + [1-9] | focus desktop 1-9 |
+| Super + Shift + [1-9] | move window to desktop 1-9 |
+| Alt + Tab | toggle window focus |
+| Super + Tab | toggle floating/tiling |
+| Super + q | kill focused window |
+| Super + space | toggle fullscreen |
+| Super + m | toggle monocle |
+| Super + Arrow [Up,Down,Left,Right] | resize window |
+| Super + Shift + [Up,Down,Left,Right] | swap window |
 
-
-# Stuffs In Rice
-  - AppLauncher: rofi
-  - Bar: polybar
+# Included
+  - Bar: tint2 
   - Compositor: picom-ibhwagan
   - Font: JetBrains Mono, Material
-  - LockScreen: i3lock-color
+  - Menus: rofi
   - Notification: dunst
   - PdfReader: zathura
+  - ScreenShot: flameshot, maim
   - Shell: bash, zsh
   - Terminal: alacritty, kitty
   - TextEditor: lite-xl
-  - WindowManager: awesome-wm, bspwm, i3-gaps
+  - WindowManager: bspwm
 
 ## Others
   - ColorScheme: [paradise](https://github.com/Manas140/paradise)
   - Fetch: [fetch](https://github.com/Manas140/fetch)
-  - FileManager: pcmanfm
+  - FileManager: fff 
   - ImageViewer: feh
   - MusicPlayer: musikcube
   - MusicVisualiser: cava
-  - ScreenShot: flameshot, maim
-  - TextEditor: nvim
+  - TextEditor: nvim with [config](https://github.com/Manas140/conscious)
   - VideoPlayer: mpv
-  - WebBrowser: firefox with [SimpleFox](https://github.com/migueravila/SimpleFox), chromium
+  - WebBrowser: firefox with [SimpleFox](https://github.com/migueravila/SimpleFox)

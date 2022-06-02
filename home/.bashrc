@@ -2,16 +2,16 @@
 [[ $- != *i* ]] && return
 
 #Prompt
-PS1='\033[1;32m\w/\033[0;0m '
+PS1='\033[1;32m\w\033[0;0m '
 
 #Exports 
 export PATH="$HOME/.local/bin/:$PATH"
 export MICRO_TRUECOLOR=1
 
 # Aliases
-alias gp='git push'
+alias gp='git push -v'
 alias ga='git add -v'
-alias gc='git commit'
+alias gc='git commit -v'
 alias ls='ls --color=auto -t'
 alias cls='clear'
 alias py='python3'

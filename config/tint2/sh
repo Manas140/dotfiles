@@ -1,0 +1,64 @@
+#!/bin/sh
+
+. /sys/class/power_supply/BAT*/uevent
+
+bat() {
+  case $POWER_SUPPLY_STATUS in
+    Charging) printf "";;
+    Discharging) printf "";;
+    Full) printf "";; 
+  esac
+}
+
+vol() {
+  status=$( pulsemixer --get-mute )
+  case $status in 
+    0)
+      str=$( pulsemixer --get-volume )
+      vol=${str% *}
+      if [ $vol -gt 60 ]; then
+        printf "";
+      elif [ $vol -gt 30 ]; then
+        printf "";
+      else  
+        printf "";
+      fi
+      ;;
+    1) printf "";;
+  esac
+}
+
+net() {
+  read -r STATUS < $(ls -d /sys/class/net/w*)/operstate
+  case $STATUS in 
+    up) printf "";;
+    down) printf "";;
+  esac
+}
+
+bl() {
+  read -r current < /sys/class/backlight/intel_backlight/brightness
+  read -r max < /sys/class/backlight/intel_backlight/max_brightness
+  bl=$(( $current * 100 / $max ))
+  if [ $bl -gt 60 ]; then
+    printf "";
+  elif [ $bl -gt 30 ]; then
+    printf "";
+  else
+    printf "";
+  fi
+}
+
+cp() {
+  hex=$($HOME/.local/bin/col)
+  [ -n "$hex" ] || exit
+  convert -size 50x50 xc:"$hex" /tmp/icon.png
+  notify-send "Color" "$hex" --icon=/tmp/icon.png
+  printf "$hex\n" | xclip -sel c 
+}
+
+# Rofi Menu's
+shot() { $HOME/.config/rofi/scr; }
+pm() { $HOME/.config/rofi/pm; }
+
+$1

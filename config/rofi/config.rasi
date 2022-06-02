@@ -1,6 +1,6 @@
 configuration {
   modi: "drun";
-  display-drun: "";
+  display-drun: "";
   drun-display-format: "{name}";
   font: "JetBrains Mono 10";
 }
@@ -16,25 +16,26 @@ configuration {
 }
 
 window {
-  location: north west;
+  location: west;
   width: 25%;
+  margin: 0 0 0 45;
   height: 100%;
   spacing: 0;
-  orientation: horizontal;
   children: [ box ];
 }
 
 box {
   padding: 0.75em;
   spacing: 0.5em;
-  layout: vertical;
   children: [ entry, listview ];
 }
+
 entry {
   placeholder: "Search...";
-  expand: false;
   padding: 0.75em;
+  expand: false;
 }
+
 element {
   text-color: @al;
   padding: 0.75em;
@@ -45,4 +46,8 @@ element selected {
 element-text, element-icon {
   background-color: inherit;
   text-color: inherit;
+}
+
+listview, element, element selected, element-text, element-icon {
+  cursor: pointer;
 }

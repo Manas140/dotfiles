@@ -1,31 +1,31 @@
-#Apps
+# Apps
 super + Return
   kitty
 
 super + @r
-  rofi -show
+  rofi -show drun
 
 super + @b
   firefox
 
-#Screenshot
+# Screenshot
 Print
-  flameshot gui
+  sh $HOME/.config/rofi/sh ss
 
-#Workspaces
+super + Print
+  sleep 1; flameshot gui
+
+# Workspaces
 super + {_,shift + }{1-9,0}
   bspc {desktop -f,node -d} '^{1-9,10}'paces 
 
-super + shift + l
-  sh $HOME/.local/bin/lock
-
-super + shift + e
-  bspc quit
+super + p
+  sh $HOME/.config/rofi/sh pm
 
 super + shift + r
   bspc wm -r
 
-#Hardware
+# Hardware
 XF86AudioRaiseVolume 
   pactl set-sink-volume @DEFAULT_SINK@ +5%
 XF86AudioLowerVolume 
@@ -35,7 +35,7 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
   xbacklight -5
 
-#Window Management
+# Window Management
 super + Tab
   bspc node -t {floating,tiled}
 

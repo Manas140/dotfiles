@@ -3,11 +3,13 @@
 #Autostart
 picom -b &
 killall sxhkd; sxhkd &
-killall dunst; dunst &
+killall dunst; dunst -print > .cache/dunst.log &
 feh --bg-fill -r -z $HOME/Pictures/Wallpapers &
 redshift -x && redshift -O 4000k &
 xsetroot -cursor_name left_ptr &
-$HOME/.config/polybar/launch.sh &
+killall flameshot; flameshot &
+# $HOME/.config/polybar/launch.sh &
+killall tint2; tint2 &
 
 #variable
 alias bc='bspc config'
@@ -31,3 +33,14 @@ bc focus_follows_pointer true
 #rules
 br -a feh state=floating
 br -a mpv state=floating
+
+bspc subscribe node_state | while read -r _ _ _ _ state flag; do
+  if [ "$state" != "fullscreen" ]; then
+    continue
+  fi
+  if [ "$flag" == on ]; then
+    br -a tint2 layer=bottom
+  else
+    br -a tint2 layer=top
+  fi
+done

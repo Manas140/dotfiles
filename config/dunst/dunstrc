@@ -1,19 +1,19 @@
 [global]
   monitor = 0
   follow = mouse
-  shrink = no
+  shrink = yes
   padding = 20
-  horizontal_padding = 20
+  horizontal_padding = 20 
   
-  width = 275
+  width = 200
   height = 100
-  offset = 10x50
-  origin = bottom-right
+  offset = 10x10
+  origin = bottom-right 
 
   frame_width = 0
   separator_height = 0
-  frame_color = "#151515"
-  separator_color = "#151515"
+  frame_color = "#121212"
+  separator_color = "#121212"
 
   sort = no
   font = JetBrains Mono 10
@@ -40,16 +40,16 @@
   mouse_right_click = close_all
 
 [urgency_low]
-  background = "#151515"
+  background = "#121212"
   foreground = "#8C977D"
   timeout = 5
 
 [urgency_normal]
-  background = "#151515"
+  background = "#121212"
   foreground = "#E8E3E3"
   timeout = 10
 
 [urgency_critical]
-  background = "#151515"
+  background = "#121212"
   foreground = "#B66467"
   timeout = 20

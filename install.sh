@@ -5,30 +5,30 @@ cr="\033[1;31m"
 cg="\033[1;32m"
 cb="\033[1;34m"
 
-printf "${cg}[*] Proceeding Will Replaces Your Previous Config, Make A Backup Before Running It.\n"
+printf "${cg}Proceeding further would replace all of the current configs, consider making a backup.\n"
 printf "${cr}"
-read -p "[*] DO YOU WANT TO PROCEED [Y/N] " allowed
-dir="$HOME/.config $HOME/Pictures/Wallpapers $HOME/.local/bin $HOME/.fonts"
+read -p "Do you wish to proceed? [y/n]: " allowed
+dir="$HOME/.config $HOME/Pictures/Wallpapers $HOME/Pictures/ScreenShots $HOME/.local/bin $HOME/.fonts"
 
 case $allowed in
   Y*|y*)
     for a in $dir; do 
       mkdir -p $a 
     done
-    printf "${cg}[*] Copying Dotfiles\n"
-    printf "${cb} [*] Copying Configs\n"
+    printf "${cg}Copying Dotfiles\n"
+    printf "${cb}  Copying Configs\n"
     cp -ra config/. ~/.config
     cp -ra home/. ~/.
-    printf "${cg} [*] Configs Copied\n"
-    printf "${cb} [*] Copying Scripts\n"
+    printf "${cg}    Configs Copied\n"
+    printf "${cb}  Copying Scripts\n"
     cp -ra bin/. ~/.local/bin/
-    printf "${cg} [*] Scripts Copied\n"
-    printf "${cb} [*] Copying Wallpapers\n"
+    printf "${cg}    Scripts Copied\n"
+    printf "${cb}  Copying Wallpapers\n"
     cp -ra walls/. ~/Pictures/Wallpapers
-    printf "${cg} [*] Wallpapers Copied\n"
-    printf "${cb} [*] Copying Fonts\n"
+    printf "${cg}    Wallpapers Copied\n"
+    printf "${cb}  Copying Fonts\n"
     cp -ran fonts/. ~/.fonts
-    printf "${cg} [*] Fonts Copied\n"
-    printf "${cg}[*] Dotfiles Installed\n";;
-  *) printf "${cr}[-] Aborting!\n";;
+    printf "${cg}    Fonts Copied\n"
+    printf "${cg}Dotfiles Installed\n";;
+  *) printf "${cr}Aborting!\n";;
 esac
