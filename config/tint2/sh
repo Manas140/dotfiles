@@ -58,7 +58,7 @@ cp() {
 }
 
 # Rofi Menu's
-shot() { $HOME/.config/rofi/scr; }
-pm() { $HOME/.config/rofi/pm; }
+shot() { $HOME/.config/rofi/sh ss; }
+pm() { $HOME/.config/rofi/sh pm; }
 
 $1
