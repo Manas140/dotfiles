@@ -13,7 +13,8 @@
 
 ## Installation
 
-- <details><summary>Prerequisites</summary>
+- <details><summary>Prerequisites</summary><br>
+  
   > Must have, just to make sure everything works properly
   
     ```
@@ -46,7 +47,7 @@
   ./install.sh 
   ```
 
-- <details><summary>Download submodules, includes config for Gtk3 & Nvim ... [ Optional ]</summary>
+- <details><summary>Download submodules, includes config for Gtk3 & Nvim ... [ Optional ]</summary><br>
 
   ```
   git submodules init
@@ -54,11 +55,9 @@
   ```
   
   > Once Done, 
-  
   > - Follow Gtk3 installation over [here](https://github.com/paradise-theme/gtk).
-  
   > - Follow Nvim installation over [here](https://github.com/manas140/conscious).
-
+  
 </details>
 
 ## Usage [ Keybinds ] 
