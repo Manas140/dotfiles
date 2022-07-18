@@ -8,7 +8,7 @@ feh --bg-fill -r -z $HOME/Pictures/Wallpapers &
 redshift -x && redshift -O 4000k &
 xsetroot -cursor_name left_ptr &
 killall flameshot; flameshot &
-# $HOME/.config/polybar/launch.sh &
+xsettingsd &
 killall tint2; tint2 &
 
 #variable
