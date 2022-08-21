@@ -8,7 +8,7 @@ cb="\033[1;34m"
 printf "${cg}Proceeding further would replace all of the current configs, consider making a backup.\n"
 printf "${cr}"
 read -p "Do you wish to proceed? [y/n]: " allowed
-dir="$HOME/.config $HOME/Pictures/Wallpapers $HOME/Pictures/ScreenShots $HOME/.local/bin $HOME/.fonts"
+dir="$HOME/.config $HOME/.fonts"
 
 case $allowed in
   Y*|y*)
@@ -17,15 +17,9 @@ case $allowed in
     done
     printf "${cg}Copying Dotfiles\n"
     printf "${cb}  Copying Configs\n"
-    cp -ra config/. ~/.config
-    cp -ra home/. ~/.
+    cp -ra cfg/. ~/.config
+    cp -ra home/. ~/
     printf "${cg}    Configs Copied\n"
-    printf "${cb}  Copying Scripts\n"
-    cp -ra bin/. ~/.local/bin/
-    printf "${cg}    Scripts Copied\n"
-    printf "${cb}  Copying Wallpapers\n"
-    cp -ra walls/. ~/Pictures/Wallpapers
-    printf "${cg}    Wallpapers Copied\n"
     printf "${cb}  Copying Fonts\n"
     cp -ran fonts/. ~/.fonts
     printf "${cg}    Fonts Copied\n"
