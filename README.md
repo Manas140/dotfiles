@@ -14,6 +14,8 @@
 ## Installation
 
 - <details><summary>Prerequisites</summary>
+  <br>
+  
   > Must have, just to make sure everything works properly
   
     ```
@@ -41,34 +43,33 @@
   ```
 
 - <details><summary>Download submodules, includes config for Gtk3 & Nvim ... [ Optional ]</summary>
-
+  
+  <br>
+  
   ```
   git submodules init
   git submodules update
   ```
   
   > Once Done, 
-  
   > - Follow Gtk3 installation over [here](https://github.com/paradise-theme/gtk).
-  
   > - Follow Nvim installation over [here](https://github.com/manas140/conscious).
 
 </details>
 
 ## Usage [ Keybinds ] 
-| Key [Software]                       | Action                     |
+| Key                                  | Action                     |
 | -----                                | -----                      |
+| **[Software]**                       | **Action**                 |
 | Print                                | flameshot gui              |
 | Super + r                            | rofi                       |
 | Super + Return                       | kitty                      |
-
-| Key [Hardware]                       | Action                     |
-| -----                                | -----                      |
+|                                      |                            |
+| **[Hardware]**                       | **Action**                 |
 | Fn + Arrow [Up,Down]                 | Volume Control             |
 | Fn + Arrow [Left,Right]              | Brightness Control         |
-
-| Key [AwesomeWm]                      | Action                     |
-| -----                                | -----                      |
+|                                      |                            |
+| **[AwesomeWm]**                      | **Action**                 |
 | Super + d                            | open dashboard             |
 | Super + q                            | kill focused window        |
 | Alt + Tab                            | toggle window focus        |
@@ -77,6 +78,7 @@
 | Super + [1-9]                        | focus desktop 1-9          |
 | Super + Shift + [1-9]                | move window to desktop 1-9 |
 | Super + Arrow [Up,Down,Left,Right]   | resize window              |
+
 
 ## Project references
   - Colorscheme: [Paradise-theme](https://github.com/paradise-theme)
