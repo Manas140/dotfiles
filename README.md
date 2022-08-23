@@ -15,13 +15,13 @@
 
 - <details><summary>Prerequisites</summary>
   <br>
-  
+
   > Must have, just to make sure everything works properly
-  
+
     ```
     alsa-plugins-pulseaudio awesome flameshot kitty pulseaudio redshift rofi xbacklight xsettingsd zsh
     ```
-  
+
   > Suggested, makes everything feel complete
 
     ```
@@ -33,7 +33,7 @@
 - Clone the repo
 
   ```
-  git clone https://github.com/Manas140/dotfiles.git --depth=1 && cd dotfiles
+  git clone https://github.com/Manas140/dotfiles.git && cd dotfiles
   ```
 
 - Install / Copy all configs
@@ -43,12 +43,12 @@
   ```
 
 - <details><summary>Download submodules, includes config for Gtk3 & Nvim ... [ Optional ]</summary>
-  
+ 
   <br>
-  
+
   ```
-  git submodules init
-  git submodules update
+  git submodule init
+  git submodule update
   ```
   
   > Once Done, 
@@ -85,3 +85,7 @@
   - Fetch: [Fetch](https://github.com/manas140/fetch)
   - Firefox: [SimpleFox](https://github.com/migueravila/SimpleFox)
   - Nvim: [Conscious](https://github.com/manas140/conscious)
+
+## Special Thanks
+
+  - [Rklyz](https://github.com/rklyz)
