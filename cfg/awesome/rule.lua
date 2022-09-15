@@ -6,10 +6,11 @@ awful.rules.rules = {
       border_color = beautiful.border_color,
       focus = awful.client.focus.filter,
       raise = true,
+      maximized = false,
       keys = keys.clientkeys,
       buttons = keys.clientbuttons,
       screen = awful.screen.preferred,
-      placement = awful.placement.no_overlap+awful.placement.no_offscreen
+      placement = awful.placement.no_overlap+awful.placement.no_offscreen,
     }
   },
 
@@ -21,11 +22,11 @@ awful.rules.rules = {
     properties = { titlebars_enabled = true }
   },
 
-  -- Floating exceptions
+  -- Floating, Titlebar exceptions
   {
     rule_any = {
-      class = {'Lxappearance', 'qt5ct', 'feh'},
-      name = {'Event Tester'}, --xev
+      class = {'gnome', 'gtk', 'Lxappearance', 'qt5ct', 'feh'},
+      name = {'Event Tester', 'Komikku', 'marker'},
       role = {'pop-up', 'GtkFileChooserDialog'},
       type = {'dialog'}
     },

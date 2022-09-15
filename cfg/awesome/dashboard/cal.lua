@@ -1,7 +1,7 @@
 local styles = {}
 
 styles.month = {
-  padding= 5,
+  padding= dpi(5),
   fg_color = beautiful.pri,
   bg_color = beautiful.bg_normal,
 }
@@ -44,7 +44,7 @@ local function decorate_cell(widget, flag, date)
   local ret = wibox.widget {
     {
       widget,
-      margins = (props.padding or dpi(3)) + (props.border_width or 0),
+      margins = (props.padding or dpi(5)) + (props.border_width or 0),
       widget= wibox.container.margin
     },
     shape= props.shape,

@@ -22,7 +22,7 @@ end
 
 M.vol = function()
   awful.spawn.easy_async_with_shell(vol, function(out)
-    val = gears.string.split(out, " ")
+    local val = gears.string.split(out, " ")
     awesome.emit_signal('vol::value', tonumber(val[1]), tonumber(val[2]))
   end)
 end

@@ -5,8 +5,7 @@ local style = require "core.style"
 
 ------------------------------ Themes ----------------------------------------
 
-core.reload_module("colors.paradise-dark")
--- core.reload_module("colors.paradise-light")
+core.reload_module("colors.paradise")
 
 --------------------------- Key bindings -------------------------------------
 

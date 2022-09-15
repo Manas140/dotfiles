@@ -59,27 +59,39 @@ M.nig = wibox.widget {
   widget = wibox.container.background,
 }
 
-M.rec = wibox.widget {
+M.blu = wibox.widget {
   {
     {
+      id = 'blu',
       widget = wibox.widget.textbox,
       font = beautiful.icofont,
-      markup = "",
+      markup = "",
       halign = "center",
       align = 'center',
     },
     widget = wibox.container.margin,
-    margins = dpi(5),
+    margins = dpi(15),
   },
-  widget = wibox.container.background,
+  fg = on,
   bg = beautiful.bg_minimize,
   shape = help.rrect(2),
-  fg = beautiful.fg_normal,
+  widget = wibox.container.background,
 }
 
-M.rec:buttons(gears.table.join(
+local blue = true
+
+M.blu:buttons(gears.table.join(
   awful.button({}, 1, function()
-    awful.spawn.with_shell("flameshot gui")
+    blue = not blue
+    if blue then
+      awful.spawn.with_shell("bluetoothctl power on")
+      M.blu:get_children_by_id("blu")[1].markup = ""
+      M.blu.fg = on
+    else
+      awful.spawn.with_shell("bluetoothctl power off")
+      M.blu:get_children_by_id("blu")[1].markup = ""
+      M.blu.fg = off
+    end
   end)
 ))
 
@@ -109,11 +121,11 @@ M.wifi:buttons(gears.table.join(
     if wifi then
       M.wifi.fg = on
       M.wifi:get_children_by_id("wifi")[1].markup = ""
-      awful.spawn.with_shell("nmcli radio wifi off")
+      awful.spawn.with_shell("nmcli radio wifi on")
     else
       M.wifi.fg = off
       M.wifi:get_children_by_id("wifi")[1].markup = ""
-      awful.spawn.with_shell("nmcli radio wifi on")
+      awful.spawn.with_shell("nmcli radio wifi off")
     end
   end)
 ))

@@ -14,18 +14,17 @@
 ## Installation
 
 - <details><summary>Prerequisites</summary>
-  <br>
 
   > Must have, just to make sure everything works properly
 
     ```
-    alsa-plugins-pulseaudio awesome flameshot kitty pulseaudio redshift rofi xbacklight xsettingsd zsh
+    awesome bluez elogind flameshot kitty mpd mpDris2 nmcli playerctl pulsemixer redshift rofi xbacklight xsettingsd zsh
     ```
 
   > Suggested, makes everything feel complete
 
     ```
-    alacritty bash firefox htop lf lite-xl mpv nvim zathura
+    alacritty firefox ncmpcpp nvim lf zathura
     ```
 
 </details>
@@ -33,7 +32,7 @@
 - Clone the repo
 
   ```
-  git clone https://github.com/Manas140/dotfiles.git && cd dotfiles
+  git clone https://github.com/Manas140/dotfiles.git --depth=1 --branch='awedots' && cd dotfiles
   ```
 
 - Install / Copy all configs
@@ -41,19 +40,6 @@
   ```
   ./install.sh 
   ```
-
-- <details><summary>Download submodules, includes config for Gtk3 & Nvim ... [ Optional ]</summary>
- 
-  <br>
-
-  ```
-  git submodule init
-  git submodule update
-  ```
-  
-  > Once Done, 
-  > - Follow Gtk3 installation over [here](https://github.com/paradise-theme/gtk).
-  > - Follow Nvim installation over [here](https://github.com/manas140/conscious).
 
 </details>
 

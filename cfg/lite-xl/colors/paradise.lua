@@ -2,7 +2,7 @@ local style = require "core.style"
 local common = require "core.common"
 
 style.background = { common.color "#151515" }
-style.background2 = { common.color "#151515" }
+style.background2 = { common.color "#121212" }
 style.background3 = { common.color "#151515" }
 style.text = { common.color "#bbb6b6" }
 style.caret = { common.color "#E8E3E3" }
@@ -13,8 +13,8 @@ style.selection = { common.color "#2e2e2e" }
 style.line_number = { common.color "#424242" }
 style.line_number2 = { common.color "#E8E3E3" }
 style.line_highlight = { common.color "#151515" }
-style.scrollbar = { common.color "#151515" }
-style.scrollbar2 = { common.color "#151515" }
+style.scrollbar = { common.color "#121212" }
+style.scrollbar2 = { common.color "#101010" }
 
 style.syntax = {}
 style.syntax["normal"] = { common.color "#E8E3E3" }

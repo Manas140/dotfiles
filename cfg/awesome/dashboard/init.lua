@@ -51,9 +51,9 @@ local dashboard = awful.popup {
       sep,
       {
         wid.wifi,
+        wid.blu,
         wid.vol,
         wid.nig,
-        wid.rec,
         spacing = dpi(10),
         layout = wibox.layout.flex.horizontal,
       },

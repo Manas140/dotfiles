@@ -10,3 +10,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 client.connect_signal("manage", function (c)
   c.shape = help.rrect(2)
 end)
+
+client.connect_signal("property::maximized", function(c)
+  c.maximized = false -- no need for maximize
+end)

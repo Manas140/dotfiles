@@ -21,8 +21,8 @@ keys.globalkeys = gears.table.join(
 
   -- Window management
   awful.key({'Mod1'}, 'Tab', function() awful.client.focus.byidx(1) end),
-  awful.key({mod}, 'Right', function () awful.tag.incmwfact(0.05) end),
-  awful.key({mod}, 'Left', function () awful.tag.incmwfact(-0.05) end),
+  awful.key({mod}, 'Right', function () awful.tag.incmwfact(0.025) end),
+  awful.key({mod}, 'Left', function () awful.tag.incmwfact(-0.025) end),
   awful.key({mod}, 'Up', function () awful.client.incwfact(0.05) end),
   awful.key({mod}, 'Down', function () awful.client.incwfact(-0.05) end),
 

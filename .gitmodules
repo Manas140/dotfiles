@@ -1,6 +1,0 @@
-[submodule "home/.themes/paradise"]
-	path = home/.themes/paradise
-	url = https://github.com/paradise-theme/paradise-gtk
-[submodule "cfg/nvim"]
-	path = cfg/nvim
-	url = https://github.com/Manas140/Conscious.git
