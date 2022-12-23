@@ -56,7 +56,7 @@ end)
 
 -- Autostart
 awful.spawn.with_shell('redshift -x && redshift -O 4000K')
-awful.spawn.with_shell('pulsemixer --unmute')
+awful.spawn.with_shell('picom -b')
 awful.spawn.with_shell('flameshot &')
 awful.spawn.with_shell('xsettingsd &')
 awful.spawn.with_shell('mpd &')

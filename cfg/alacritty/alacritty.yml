@@ -28,7 +28,11 @@ font:
     family: JetBrains Mono
     style: Bold Italic
 
-  size: 9.5
+  size: 10
+
+cursor: 
+  style: beam
+  blink: true
 
 colors:
   # Default colors

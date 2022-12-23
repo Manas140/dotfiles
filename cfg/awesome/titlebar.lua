@@ -36,7 +36,7 @@ client.connect_signal("request::titlebars", function(c)
           -- awful.titlebar.widget.maximizedbutton(c),
           awful.titlebar.widget.closebutton(c),
           spacing = dpi(15),
-          layout = wibox.layout.fixed.horizontal()
+          layout = wibox.layout.fixed.horizontal
         },
         top = dpi(5),
         bottom = dpi(5),
@@ -46,8 +46,19 @@ client.connect_signal("request::titlebars", function(c)
     },
     right = dpi(10),
     left = dpi(10),
-    top = dpi(3),
-    bottom = dpi(3),
+    top = dpi(2),
+    bottom = dpi(4),
     widget = wibox.container.margin
   }
 end)
+
+-- screen.connect_signal("arrange", function(s)
+--   local layout = s.selected_tag.layout.name
+--   for _, c in pairs(s.clients) do
+--     if layout == "floating" or c.floating then
+--       awful.titlebar.show(c)
+--     else
+--       awful.titlebar.hide(c)
+--     end
+--   end
+-- end)

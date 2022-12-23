@@ -3,8 +3,8 @@ naughty.config.defaults.timeout = 10
 naughty.config.defaults.screen = awful.screen.focused()
 
 naughty.config.padding = dpi(10)
-naughty.config.spacing = dpi(1)
-naughty.config.defaults.shape = help.rrect(2)
+naughty.config.spacing = dpi(5)
+naughty.config.defaults.shape = help.rrect(beautiful.br)
 
 naughty.config.defaults.border_width = dpi(10)
 naughty.config.defaults.border_color = beautiful.bg_normal

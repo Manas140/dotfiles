@@ -13,14 +13,14 @@ local name = wibox.widget {
 local prev = wibox.widget {
   align = 'center',
   font = beautiful.icofont,
-  text = '',
+  text = '',
   widget = wibox.widget.textbox,
 }
 
 local next = wibox.widget {
   align = 'center',
   font = beautiful.icofont,
-  text = '',
+  text = '',
   widget = wibox.widget.textbox,
 }
 
@@ -29,22 +29,22 @@ local play = wibox.widget {
     id = 'play',
     align = 'center',
     font = beautiful.icofont,
-    text = '',
+    text = '',
     widget = wibox.widget.textbox,
   },
-  widget = wibox.container.background, 
+  widget = wibox.container.background,
 }
 
 local s = false
 
 awesome.connect_signal('play::value', function(s, a, b)
   if s:match("Playing") then
-    play:get_children_by_id('play')[1].text = ''
+    play:get_children_by_id('play')[1].text = ''
     play.fg = beautiful.pri
     s = true
   else
     play.fg = beautiful.fg_minimize
-    play:get_children_by_id('play')[1].text = ''
+    play:get_children_by_id('play')[1].text = ''
     s = false
   end
 
@@ -59,10 +59,10 @@ play:buttons(gears.table.join(
     if s then
       awful.spawn.with_shell("playerctl pause")
       play.fg = beautiful.fg_minimize
-      play:get_children_by_id('play')[1].text = ''
+      play:get_children_by_id('play')[1].text = ''
     else
       awful.spawn.with_shell("playerctl play")
-      play:get_children_by_id('play')[1].text = ''
+      play:get_children_by_id('play')[1].text = ''
       play.fg = beautiful.pri
     end 
   end)
@@ -83,23 +83,22 @@ prev:buttons(gears.table.join(
 local player = wibox.widget {
   {
     {
-      -- img,
+      name,
       {
-        name,
-        {
-          prev,
-          play,
-          next,
-          layout = wibox.layout.flex.horizontal,
-        },
-        layout = wibox.layout.fixed.vertical,
+        prev,
+        play,
+        next,
+        layout = wibox.layout.flex.horizontal,
       },
-      layout = wibox.layout.flex.horizontal,
+      layout = wibox.layout.flex.vertical,
     },
-    margins = dpi(15),
+    top = dpi(15),
+    left = dpi(20),
+    right = dpi(20),
+    bottom = dpi(5),
     widget = wibox.container.margin,
   },
-  shape = help.rrect(2),
+  shape = help.rrect(beautiful.br),
   -- fg = beautiful.pri,
   bg = beautiful.bg_minimize,
   widget = wibox.container.background,

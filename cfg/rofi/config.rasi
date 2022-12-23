@@ -16,10 +16,11 @@ configuration {
 }
 
 window {
-  location: west;
-  width: 22%;
-  x-offset: 45;
-  height: 100%;
+  location: south west;
+  width: 270;
+  x-offset: 60;
+  y-offset: -10;
+  height: 70%;
   spacing: 0;
   children: [ box ];
 }

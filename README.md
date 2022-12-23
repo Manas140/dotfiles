@@ -18,13 +18,13 @@
   > Must have, just to make sure everything works properly
 
     ```
-    awesome bluez elogind flameshot kitty mpd mpDris2 nmcli playerctl pulsemixer redshift rofi xbacklight xsettingsd zsh
+    awesome bluez elogind flameshot alacritty mpd mpDris2 nmcli picom playerctl pulsemixer redshift rofi xsettingsd zsh
     ```
 
   > Suggested, makes everything feel complete
 
     ```
-    alacritty firefox ncmpcpp nvim lf zathura
+    kitty firefox ncmpcpp nvim lf zathura
     ```
 
 </details>
@@ -49,11 +49,7 @@
 | **[Software]**                       | **Action**                 |
 | Print                                | flameshot gui              |
 | Super + r                            | rofi                       |
-| Super + Return                       | kitty                      |
-|                                      |                            |
-| **[Hardware]**                       | **Action**                 |
-| Fn + Arrow [Up,Down]                 | Volume Control             |
-| Fn + Arrow [Left,Right]              | Brightness Control         |
+| Super + Return                       | alacritty                  |
 |                                      |                            |
 | **[AwesomeWm]**                      | **Action**                 |
 | Super + d                            | open dashboard             |
@@ -75,3 +71,4 @@
 ## Special Thanks
 
   - [Rklyz](https://github.com/rklyz)
+  - [Harry](https://github.com/saimoomedits)

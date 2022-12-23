@@ -8,7 +8,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Rounded Corners
 client.connect_signal("manage", function (c)
-  c.shape = help.rrect(2)
+  c.shape = help.rrect(beautiful.br)
 end)
 
 client.connect_signal("property::maximized", function(c)

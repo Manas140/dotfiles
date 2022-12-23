@@ -10,14 +10,13 @@ keys.globalkeys = gears.table.join(
   -- Awesome
   awful.key({mod, 'Shift'}, 'r', awesome.restart),
   awful.key({mod}, 'd', function() dashboard.toggle() end),
-  awful.key({mod, 'Shift'}, 'e', awesome.quit),
   awful.key({mod, 'Shift'}, 'l', function() awful.util.spawn('sh ~/.local/bin/lock') end),
 
-  --Hardware
-  awful.key({}, 'XF86MonBrightnessUp', function() awful.spawn.with_shell('xbacklight +5') end),
-  awful.key({}, 'XF86MonBrightnessDown', function() awful.spawn.with_shell('xbacklight -5') end),
-  awful.key({}, 'XF86AudioRaiseVolume', function() awful.spawn.with_shell('pactl set-sink-volume @DEFAULT_SINK@ +5%') end),
-  awful.key({}, 'XF86AudioLowerVolume', function() awful.spawn.with_shell('pactl set-sink-volume @DEFAULT_SINK@ -4%') end),
+  --Hardware ( Laptop Users )
+  -- awful.key({}, 'XF86MonBrightnessUp', function() awful.spawn.with_shell('xbacklight +5') end),
+  -- awful.key({}, 'XF86MonBrightnessDown', function() awful.spawn.with_shell('xbacklight -5') end),
+  -- awful.key({}, 'XF86AudioRaiseVolume', function() awful.spawn.with_shell('pactl set-sink-volume @DEFAULT_SINK@ +5%') end),
+  -- awful.key({}, 'XF86AudioLowerVolume', function() awful.spawn.with_shell('pactl set-sink-volume @DEFAULT_SINK@ -4%') end),
 
   -- Window management
   awful.key({'Mod1'}, 'Tab', function() awful.client.focus.byidx(1) end),
@@ -27,7 +26,7 @@ keys.globalkeys = gears.table.join(
   awful.key({mod}, 'Down', function () awful.client.incwfact(-0.05) end),
 
   -- Applications
-  awful.key({mod}, 'Return', function() awful.util.spawn('kitty') end),
+  awful.key({mod}, 'Return', function() awful.util.spawn('alacritty') end),
   awful.key({mod}, 'r', function() awful.util.spawn('rofi -show drun') end),
 
   -- Screenshots

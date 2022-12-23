@@ -1,8 +1,8 @@
 local menu = {
   { "Refresh", awesome.restart },
   { "Logout", function() awesome.quit() end },
-  { "PowerOff", function() awful.spawn.with_shell('loginctl poweroff') end },
   { "Restart", function() awful.spawn.with_shell('loginctl reboot') end },
+  { "Shutdown", function() awful.spawn.with_shell('loginctl poweroff') end },
 }
 
 local main = awful.menu {
@@ -11,14 +11,16 @@ local main = awful.menu {
       "Awesome",
       menu,
     },
-    { "Terminal", "kitty" },
+    { "Terminal", "alacritty" },
     { "Browser", "firefox" },
-    { "Editor", "kitty nvim" },
-    { "Files", "kitty lf" },
+    { "Editor", "alacritty -e nvim" },
+    { "Music", "alacritty -e ncmpcpp" },
+    { "Files", "alacritty -e lf" },
   }
 }
 
-main.wibox.shape = help.rrect(2)
+main.wibox.shape = help.rrect(beautiful.br)
+-- menu.wibox.shape = help.rrect(beautiful.br)
 
 root.buttons(gears.table.join(
   awful.button({ }, 3, function () main:toggle() end)

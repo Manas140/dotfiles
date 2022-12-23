@@ -10,29 +10,38 @@ local tasklist_buttons = gears.table.join(
 )
 
 return function(s)
-  local task = awful.widget.tasklist {
-    screen = s,
-    filter = awful.widget.tasklist.filter.currenttags,
-    buttons = tasklist_buttons,
-    layout = {
-      spacing = dpi(5),
-      layout = wibox.layout.flex.vertical
-    },
-    widget_template = {
-      {
-        {
-          id = 'clienticon',
-          widget = awful.widget.clienticon,
-        },
-        margins = dpi(5),
-        widget = wibox.container.margin,
+  local task = wibox.widget {
+    widget = awful.widget.tasklist {
+      screen   = s,
+      filter   = awful.widget.tasklist.filter.currenttags,
+      buttons  = tasklist_buttons,
+      layout   = {
+        layout  = wibox.layout.fixed.vertical
       },
-      id = 'background_role',
-      shape = help.rrect(2),
-      widget = wibox.container.background,
-      create_callback = function(self, c)
-        self:get_children_by_id('clienticon')[1].client = c
-      end,
+      style = {
+        shape = help.rrect(1),
+      },
+      widget_template = {
+        {
+          wibox.widget.base.make_widget(),
+          forced_width = dpi(4),
+          id = 'background_role',
+          widget = wibox.container.background,
+        },
+        {
+          {
+            id = 'clienticon',
+            widget = awful.widget.clienticon,
+          },
+          margins = dpi(5),
+          widget = wibox.container.margin
+        },
+        nil,
+        create_callback = function(self, c, index, objects)
+          self:get_children_by_id('clienticon')[1].client = c
+        end,
+        layout = wibox.layout.align.horizontal,
+      },
     }
   }
   return task

@@ -14,8 +14,8 @@ M.vol = wibox.widget {
   widget = wibox.widget.textbox,
 }
 
--- Battery
-M.bat = wibox.widget {
+-- Bluethooth
+M.blu = wibox.widget {
   font = beautiful.icofont,
   align = 'center',
   widget = wibox.widget.textbox,
@@ -24,50 +24,47 @@ M.bat = wibox.widget {
 -- Clock
 M.clock = wibox.widget {
   font = beautiful.barfont,
+  format="%I\n%M",
+  refresh=1,
   align = 'center',
   valign = 'center',
-  widget = wibox.widget.textbox
+  widget = wibox.widget.textclock
 }
 
-awesome.connect_signal("net::value", function(stat)
-  if stat:match("down") then
-    M.net.markup = ""
+awesome.connect_signal("blu::value", function(stat)
+  if stat:match("no") then
+    M.blu.opacity = 0.25
+    M.blu.markup = ""
   else
-    M.net.markup = ""
+    M.blu.opacity = 1
+    M.blu.markup = ""
+  end
+end)
+
+awesome.connect_signal("net::value", function(stat)
+  if stat:match("up") then
+    M.net.opacity = 1
+    M.net.markup = ""
+  else
+    M.net.opacity = 0.25
+    M.net.markup = ""
   end
 end)
 
 awesome.connect_signal('vol::value', function(mut, val)
   if mut == 0 then
-    if val > 60 then
-      M.vol.markup = ""
+    M.vol.opacity = 1
+    if val > 70 then
+      M.vol.markup = ""
     elseif val > 30 then
-      M.vol.markup = ""
+      M.vol.markup = ""
     else
-      M.vol.markup = ""
+      M.vol.markup = ""
     end
   else
-    M.vol.markup = ""
+    M.vol.opacity = 0.25
+    M.vol.markup = ""
   end
 end)
-
-awesome.connect_signal('bat::value', function(stat, _)
-  if stat:match("Charging") then
-    M.bat.markup = ""
-  elseif stat:match("Full") then
-    M.bat.markup = ""
-  else
-    M.bat.markup = ""
-  end
-end)
-
-gears.timer {
-  timeout = 60,
-  autostart = true,
-  call_now = true,
-  callback = function()
-    M.clock.markup = os.date("%H\n%M")
-  end
-}
 
 return M

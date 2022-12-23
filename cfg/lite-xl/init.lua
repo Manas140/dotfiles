@@ -14,9 +14,9 @@ keymap.add { ["tab"] = { "command:complete", "doc:indent" } }
 
 ------------------------------- Fonts ----------------------------------------
 
-style.font = renderer.font.load(DATADIR .. "/fonts/JetBrainsMono-Regular.ttf", 10 * SCALE)
-style.code_font = renderer.font.load(DATADIR .. "/fonts/JetBrainsMono-Regular.ttf", 12 * SCALE)
-style.big_font = renderer.font.load(DATADIR .. "/fonts/JetBrainsMono-Regular.ttf", 12 * SCALE)
+style.font = renderer.font.load(DATADIR .. "/fonts/JetBrainsMono-Regular.ttf", 14 * SCALE)
+style.code_font = renderer.font.load(DATADIR .. "/fonts/JetBrainsMono-Regular.ttf", 14 * SCALE)
+style.big_font = renderer.font.load(DATADIR .. "/fonts/JetBrainsMono-Regular.ttf", 14 * SCALE)
 
 -------------------------------- Plugins ----------------------------------------
 
