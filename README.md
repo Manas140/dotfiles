@@ -27,18 +27,10 @@
     kitty firefox ncmpcpp nvim lf zathura
     ```
 
-</details>
-
 - Clone the repo
 
   ```
-  git clone https://github.com/Manas140/dotfiles.git --depth=1 && cd dotfiles
-  ```
-
-- Install Modules 
-
-  ```
-  git submodules
+  git clone --recurse-submodules https://github.com/Manas140/dotfiles.git --depth=1 && cd dotfiles
   ```
 
 - Install / Copy all configs

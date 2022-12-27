@@ -2,7 +2,7 @@
 local keys = {}
 
 local mod = 'Mod4'
-local tags = 7
+local tags = 5
 keys.tags = tags
 
 -- Keybindings

@@ -23,6 +23,9 @@ case $allowed in
     printf "${cb}  Copying Fonts\n"
     cp -ran fonts/. ~/.fonts
     printf "${cg}    Fonts Copied\n"
+    printf "${cb}  Copying Scripts\n"
+    cp -ra bin/. ~/.local/bin/
+    printf "${cg}    Scripts Copied\n"
     printf "${cg}Dotfiles Installed\n";;
   *) printf "${cr}Aborting!\n";;
 esac
