@@ -32,7 +32,13 @@
 - Clone the repo
 
   ```
-  git clone https://github.com/Manas140/dotfiles.git --depth=1 --branch='awedots' && cd dotfiles
+  git clone https://github.com/Manas140/dotfiles.git --depth=1 && cd dotfiles
+  ```
+
+- Install Modules 
+
+  ```
+  git submodules
   ```
 
 - Install / Copy all configs
@@ -55,10 +61,11 @@
 | Super + d                            | open dashboard             |
 | Super + q                            | kill focused window        |
 | Alt + Tab                            | toggle window focus        |
+| Super + m                            | minimize focused window    |
 | Super + Tab                          | toggle floating/tiling     |
 | Super + space                        | toggle fullscreen          |
-| Super + [1-9]                        | focus desktop 1-9          |
-| Super + Shift + [1-9]                | move window to desktop 1-9 |
+| Super + [1-5]                        | focus desktop 1-5          |
+| Super + Shift + [1-5]                | move window to desktop 1-5 |
 | Super + Arrow [Up,Down,Left,Right]   | resize window              |
 
 

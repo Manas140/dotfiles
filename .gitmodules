@@ -1,0 +1,3 @@
+[submodule "cfg/awesome/bling"]
+	path = cfg/awesome/bling
+	url = https://github.com/BlingCorp/bling.git

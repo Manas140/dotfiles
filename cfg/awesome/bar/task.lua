@@ -33,12 +33,20 @@ return function(s)
             id = 'clienticon',
             widget = awful.widget.clienticon,
           },
-          margins = dpi(5),
+          margins = dpi(7),
           widget = wibox.container.margin
         },
         nil,
-        create_callback = function(self, c, index, objects)
+        create_callback = function(self, c, _, _)
           self:get_children_by_id('clienticon')[1].client = c
+                      self:connect_signal('mouse::enter', function()
+                    awesome.emit_signal("bling::task_preview::visibility", s,
+                                        true, c)
+                end)
+                self:connect_signal('mouse::leave', function()
+                    awesome.emit_signal("bling::task_preview::visibility", s,
+                                        false, c)
+                end)
         end,
         layout = wibox.layout.align.horizontal,
       },

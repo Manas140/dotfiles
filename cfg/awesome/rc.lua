@@ -8,9 +8,9 @@ dpi = beautiful.xresources.apply_dpi
 
 beautiful.init('~/.config/awesome/theme/init.lua')
 keys = require('keys')
-sig = require('signals')
 help = require('help')
 dashboard = require("dashboard")
+sig = require('signals')
 
 local req = {
   'notif',
@@ -56,11 +56,10 @@ end)
 
 -- Autostart
 awful.spawn.with_shell('redshift -x && redshift -O 4000K')
-awful.spawn.with_shell('picom -b')
-awful.spawn.with_shell('flameshot &')
-awful.spawn.with_shell('xsettingsd &')
+awful.spawn.with_shell('killall flameshot; flameshot')
+awful.spawn.with_shell('killall xsettingsd; xsettingsd &')
+awful.spawn.with_shell('killall mpDris2; mpDris2 &')
 awful.spawn.with_shell('mpd &')
-awful.spawn.with_shell('mpDris2 &')
 
 -- Garbage Collection
 collectgarbage('setpause', 110)

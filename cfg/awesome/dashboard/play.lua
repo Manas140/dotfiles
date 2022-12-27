@@ -1,14 +1,5 @@
-local name = wibox.widget {
-  {
-    id = 'name',
-    align = 'center',
-    valign = 'center',
-    forced_height = dpi(70),
-    widget = wibox.widget.textbox,
-  },
-  fg = beautiful.pri,
-  widget = wibox.container.background,
-}
+local bling = require("bling")
+local playerctl = bling.signal.playerctl.lib()
 
 local prev = wibox.widget {
   align = 'center',
@@ -25,83 +16,121 @@ local next = wibox.widget {
 }
 
 local play = wibox.widget {
-  {
-    id = 'play',
-    align = 'center',
-    font = beautiful.icofont,
-    text = '',
-    widget = wibox.widget.textbox,
-  },
-  widget = wibox.container.background,
+  align = 'center',
+  font = beautiful.icofont,
+  markup = '',
+  widget = wibox.widget.textbox,
 }
 
-local s = false
-
-awesome.connect_signal('play::value', function(s, a, b)
-  if s:match("Playing") then
-    play:get_children_by_id('play')[1].text = ''
-    play.fg = beautiful.pri
-    s = true
-  else
-    play.fg = beautiful.fg_minimize
-    play:get_children_by_id('play')[1].text = ''
-    s = false
-  end
-
-  if a == "" then a = 'Unkown\n' end
-  if b == "" then b = 'Unkown\n' end
-  name:get_children_by_id('name')[1].text = string.format('%s by %s', a, b)
-end)
-
 play:buttons(gears.table.join(
-  awful.button({}, 1, function()
-    s = not s
-    if s then
-      awful.spawn.with_shell("playerctl pause")
-      play.fg = beautiful.fg_minimize
-      play:get_children_by_id('play')[1].text = ''
-    else
-      awful.spawn.with_shell("playerctl play")
-      play:get_children_by_id('play')[1].text = ''
-      play.fg = beautiful.pri
-    end 
-  end)
-))
+  awful.button({}, 1, function() playerctl:play_pause() end)))
 
 next:buttons(gears.table.join(
-  awful.button({}, 1, function()
-    awful.spawn.with_shell("playerctl next")
-  end)
-))
+  awful.button({}, 1, function() playerctl:next() end)))
 
 prev:buttons(gears.table.join(
-  awful.button({}, 1, function()
-    awful.spawn.with_shell("playerctl previous")
-  end)
-))
+  awful.button({}, 1, function() playerctl:previous() end)))
+
+local position = wibox.widget {
+  forced_height      = dpi(3),
+  shape              = help.rrect(beautiful.br),
+  color              = beautiful.pri,
+  background_color   = beautiful.fg2..'4D',
+  forced_width       = dpi(175),
+  widget             = wibox.widget.progressbar,
+}
+
+local art = wibox.widget {
+  image = beautiful.wall,
+  resize = true,
+  -- clip_shape = help.rrect(beautiful.br),
+  opacity = 0.25,
+  forced_height = dpi(120),
+  forced_width = dpi(120),
+  widget = wibox.widget.imagebox
+}
+
+local name = wibox.widget {
+  markup = '<b>Nothing Playing</b>',
+  align = 'center',
+  valign = 'center',
+  forced_height = dpi(15),
+  widget = wibox.widget.textbox
+}
+
+local artist_name = wibox.widget {
+  markup = 'None',
+  align = 'center',
+  valign = 'center',
+  forced_height = dpi(20),
+  widget = wibox.widget.textbox
+}
 
 local player = wibox.widget {
   {
+    art,
     {
-      name,
       {
-        prev,
-        play,
-        next,
-        layout = wibox.layout.flex.horizontal,
+        widget = wibox.widget.textbox,
       },
-      layout = wibox.layout.flex.vertical,
+      bg = {
+        type = "linear",
+        from = { 0, 0},
+        to = { 120, 0},
+        stops = { { 0, beautiful.bg2.."00" }, { 1, beautiful.bg2.."FF" } }
+      },
+      widget = wibox.container.background,
     },
-    top = dpi(15),
-    left = dpi(20),
-    right = dpi(20),
-    bottom = dpi(5),
-    widget = wibox.container.margin,
+    {
+      {
+        name,
+        artist_name,
+        position,
+        {
+          prev,
+          play,
+          next,
+          layout = wibox.layout.flex.horizontal,
+        },
+        spacing = dpi(10),
+        layout = wibox.layout.fixed.vertical,
+      },
+      margins = dpi(20),
+      widget = wibox.container.margin,
+    },
+    layout = wibox.layout.stack,
   },
+  forced_height = dpi(120),
   shape = help.rrect(beautiful.br),
-  -- fg = beautiful.pri,
-  bg = beautiful.bg_minimize,
+  bg = beautiful.bg2,
   widget = wibox.container.background,
 }
+
+-- Get Song Info
+playerctl:connect_signal("metadata", function(_, title, artist, album_path, album, new, player_name)
+    -- Set art widget  
+  if new then
+    art.image = beautiful.wall
+  end
+  art:set_image(gears.surface.load_uncached(album_path))
+  name:set_markup_silently(help.fg("<b>"..title.."</b>", beautiful.pri))
+  artist_name:set_markup_silently(artist)
+  -- naughty.notify { title=title, text=artist, icon=album_path }
+end)
+
+playerctl:connect_signal("playback_status", function (_, playing, _)
+  if playing then
+    play:set_markup_silently(help.fg("", beautiful.pri))
+    position.color = beautiful.pri
+  else
+    play:set_markup_silently("")
+    position.color = beautiful.fg.."66"
+  end
+end)
+
+playerctl:connect_signal("position", function (_, a, b, _)
+  position.value = a
+  position.max_value = b
+end)
 
 return player

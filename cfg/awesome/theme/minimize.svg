@@ -1,7 +1,0 @@
-<svg viewBox = "0 0 100 100">
-  <line 
-    x1="10" y1="75" x2="90" y2="75"
-    stroke="#424242"
-    stroke-width="15"
-  />
-</svg>

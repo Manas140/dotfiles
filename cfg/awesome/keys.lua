@@ -10,7 +10,6 @@ keys.globalkeys = gears.table.join(
   -- Awesome
   awful.key({mod, 'Shift'}, 'r', awesome.restart),
   awful.key({mod}, 'd', function() dashboard.toggle() end),
-  awful.key({mod, 'Shift'}, 'l', function() awful.util.spawn('sh ~/.local/bin/lock') end),
 
   --Hardware ( Laptop Users )
   -- awful.key({}, 'XF86MonBrightnessUp', function() awful.spawn.with_shell('xbacklight +5') end),
@@ -36,6 +35,7 @@ keys.globalkeys = gears.table.join(
 -- Keyboard Control
 keys.clientkeys = gears.table.join(
   awful.key({mod}, 'q', function(c) c:kill() end),
+  awful.key({mod}, 'm', function(c) c.minimized = true end),
   awful.key({mod}, 'space', function(c) c.fullscreen = not c.fullscreen; c:raise() end),
   awful.key({mod}, 'Tab', function() awful.client.floating.toggle() end)
 )

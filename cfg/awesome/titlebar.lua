@@ -17,25 +17,23 @@ client.connect_signal("request::titlebars", function(c)
   }):setup {
     {
       { -- Left
-        awful.titlebar.widget.iconwidget(c),
-        buttons = buttons,
-        layout = wibox.layout.fixed.horizontal,
-      },
-      { -- Middle
         { -- Title
           align  = 'center',
           widget = awful.titlebar.widget.titlewidget(c)
         },
+        -- awful.titlebar.widget.iconwidget(c),
+        buttons = buttons,
+        layout = wibox.layout.fixed.horizontal,
+      },
+      { -- Middle
         buttons = buttons,
         layout  = wibox.layout.flex.horizontal
       },
       { -- Right
         {
-          awful.titlebar.widget.floatingbutton(c),
           awful.titlebar.widget.minimizebutton(c),
-          -- awful.titlebar.widget.maximizedbutton(c),
           awful.titlebar.widget.closebutton(c),
-          spacing = dpi(15),
+          spacing = dpi(10),
           layout = wibox.layout.fixed.horizontal
         },
         top = dpi(5),
@@ -46,19 +44,8 @@ client.connect_signal("request::titlebars", function(c)
     },
     right = dpi(10),
     left = dpi(10),
-    top = dpi(2),
-    bottom = dpi(4),
+    top = dpi(0),
+    bottom = dpi(5),
     widget = wibox.container.margin
   }
 end)
-
--- screen.connect_signal("arrange", function(s)
---   local layout = s.selected_tag.layout.name
---   for _, c in pairs(s.clients) do
---     if layout == "floating" or c.floating then
---       awful.titlebar.show(c)
---     else
---       awful.titlebar.hide(c)
---     end
---   end
--- end)

@@ -16,7 +16,7 @@ local main = wibox.widget {
     widget = wibox.container.margin
   },
   shape = help.rrect(beautiful.br),
-  bg = beautiful.bg_minimize,
+  bg = beautiful.bg2,
   widget = wibox.container.background,
 }
 
@@ -41,15 +41,15 @@ local sys = wibox.widget {
     widget = wibox.container.margin
   },
   shape = help.rrect(beautiful.br),
-  bg = beautiful.bg_minimize,
+  bg = beautiful.bg2,
   widget = wibox.container.background,
 }
 
 awful.screen.connect_for_each_screen(function(s)
   awful.wibar({
     position = "left",
-    bg = beautiful.bg_normal,
-    fg = beautiful.fg_focus,
+    bg = beautiful.bg,
+    fg = beautiful.fg,
     width = dpi(50),
     screen = s
   }):setup {
@@ -70,7 +70,7 @@ awful.screen.connect_for_each_screen(function(s)
             require('bar.task')(s),
             layout = wibox.layout.fixed.vertical,
           },
-          bg = beautiful.bg_minimize,
+          bg = beautiful.bg2,
           shape = help.rrect(beautiful.br),
           widget = wibox.container.background
         },
@@ -83,7 +83,10 @@ awful.screen.connect_for_each_screen(function(s)
       layout = wibox.layout.flex.vertical,
     },
     { -- Bottom
-      sys,
+      {
+        sys,
+        layout = wibox.layout.fixed.vertical,
+      },
       top = dpi(5),
       left = dpi(5),
       right = dpi(5),

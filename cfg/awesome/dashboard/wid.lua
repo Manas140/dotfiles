@@ -1,9 +1,7 @@
 local M = {}
 
 local on = beautiful.pri
-local off = beautiful.fg_minimize
-
-
+local off = beautiful.fg2
 
 M.vol = wibox.widget {
   {
@@ -16,10 +14,11 @@ M.vol = wibox.widget {
       align = 'center',
     },
     widget = wibox.container.margin,
-    margins = dpi(5),
+    top = dpi(15),
+    bottom = dpi(15),
   },
   fg = beautiful.pri,
-  bg = beautiful.bg_minimize,
+  bg = beautiful.bg3,
   shape = help.rrect(beautiful.br),
   widget = wibox.container.background,
 }
@@ -35,10 +34,10 @@ M.wifi = wibox.widget {
       align = 'center',
     },
     widget = wibox.container.margin,
-    margins = dpi(15),
+    margins = dpi(5),
   },
   fg = on,
-  bg = beautiful.bg_minimize,
+  bg = beautiful.bg3,
   shape = help.rrect(beautiful.br),
   widget = wibox.container.background,
 }
@@ -57,7 +56,7 @@ M.nig = wibox.widget {
     margins = dpi(5),
   },
   fg = beautiful.pri,
-  bg = beautiful.bg_minimize,
+  bg = beautiful.bg3,
   shape = help.rrect(beautiful.br),
   widget = wibox.container.background,
 }
@@ -73,10 +72,10 @@ M.blu = wibox.widget {
       align = 'center',
     },
     widget = wibox.container.margin,
-    margins = dpi(15),
+    margins = dpi(5),
   },
   fg = on,
-  bg = beautiful.bg_minimize,
+  bg = beautiful.bg3,
   shape = help.rrect(beautiful.br),
   widget = wibox.container.background,
 }

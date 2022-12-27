@@ -17,7 +17,7 @@ configuration {
 
 window {
   location: south west;
-  width: 270;
+  width: 265;
   x-offset: 60;
   y-offset: -10;
   height: 70%;

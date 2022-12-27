@@ -6,4 +6,8 @@ help.rrect = function(rad)
   end
 end
 
+help.fg = function (text, color)
+  return "<span foreground='"..color.."'>"..text.."</span>"
+end
+
 return help

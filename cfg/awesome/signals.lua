@@ -2,9 +2,6 @@ local M = {}
 
 local vol = [[ str=$( pulsemixer --get-volume ); printf "$(pulsemixer --get-mute) ${str% *}\n" ]]
 local net = [[ printf "$(nmcli -t connection show --active)~|~$(nmcli radio wifi)" ]]
-local song = [[ printf "$(playerctl metadata xesam:title)" ]]
-local artist = [[ printf "$(playerctl metadata xesam:artist)" ]]
-local stat = [[ printf "$(playerctl status)" ]]
 local blue = [[ bluetoothctl show | grep "Powered:" ]]
 local fs = [[ df -h --output=used,size / | sed 's/G//g' ]]
 local temp = [[ cat /sys/class/thermal/thermal_zone0/temp ]]
@@ -18,16 +15,6 @@ local mem = [[
     esac;
   done < /proc/meminfo;
   printf "%d %d" "$memu" "$memt"; ]]
-
-M.play = function()
-  awful.spawn.easy_async_with_shell(stat, function(status)
-    awful.spawn.easy_async_with_shell(song, function(title)
-      awful.spawn.easy_async_with_shell(artist, function(who)
-        awesome.emit_signal('play::value', status, title, who)
-      end)
-    end)
-  end)
-end
 
 M.mem = function ()
   awful.spawn.easy_async_with_shell(mem, function (out)
@@ -92,9 +79,8 @@ gears.timer {
     M.net()
     M.blu()
     M.mem()
-    -- M.fs()
     M.temp()
-    M.play()
+    -- M.fs()
   end
 }
 

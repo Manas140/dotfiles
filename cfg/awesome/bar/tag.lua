@@ -17,10 +17,10 @@ return function(s)
     id = 'background_role',
     widget = wibox.container.background,
 
-    create_callback = function(self, c3, index, objects) 
+    create_callback = function(self, _, index, _)
       self:get_children_by_id('text_role').markup = index
     end,
-    update_callback = function(self, c3, index, objects) 
+    update_callback = function(self, _, index, _)
       self:get_children_by_id('text_role').markup = index
     end
   }
