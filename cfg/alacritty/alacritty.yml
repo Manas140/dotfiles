@@ -30,9 +30,11 @@ font:
 
   size: 10
 
-cursor: 
+cursor:
   style: beam
   blink: true
+  thickness: 0.20
+  unfocused_hollow: false 
 
 colors:
   # Default colors
