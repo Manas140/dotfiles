@@ -1,7 +1,7 @@
 local M = {}
 
 local vol = [[ str=$( pulsemixer --get-volume ); printf "$(pulsemixer --get-mute) ${str% *}\n" ]]
-local net = [[ printf "$(nmcli -t connection show --active)~|~$(nmcli radio wifi)" ]]
+local net = [[ printf "$(cat /sys/class/net/w*/operstate)~|~$(nmcli radio wifi)" ]]
 local blue = [[ bluetoothctl show | grep "Powered:" ]]
 local fs = [[ df -h --output=used,size / | sed 's/G//g' ]]
 local temp = [[ cat /sys/class/thermal/thermal_zone0/temp ]]
@@ -46,15 +46,11 @@ end
 M.net = function()
   awful.spawn.easy_async_with_shell(net, function(out)
     local val = gears.string.split(out, "~|~")
-    local v= "down"
-    if val[1] ~= "" then
-      v = "up"
-    end
     local w = "down"
     if val[2]:match("enabled") then
       w = "up"
     end
-    awesome.emit_signal('net::value', v, w)
+    awesome.emit_signal('net::value', val[1], w)
   end)
 end
 

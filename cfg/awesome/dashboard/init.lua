@@ -72,7 +72,7 @@ local buttons = wibox.widget {
       wid.wifi,
       wid.blu,
       wid.vol,
-      wid.nig,
+      -- wid.nig,
       spacing = dpi(10),
       layout = wibox.layout.flex.horizontal,
     },
