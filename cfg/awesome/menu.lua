@@ -12,7 +12,7 @@ local main = awful.menu {
       menu,
     },
     { "Terminal", "alacritty" },
-    { "Browser", "firefox" },
+    { "Browser", "chromium" },
     { "Editor", "alacritty -e nvim" },
     { "Music", "alacritty -e ncmpcpp" },
     { "Files", "alacritty -e lf" },

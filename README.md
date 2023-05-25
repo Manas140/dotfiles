@@ -24,7 +24,7 @@
   > Suggested, makes everything feel complete
 
     ```
-    kitty firefox ncmpcpp nvim lf zathura
+    kitty chromium ncmpcpp nvim lf zathura
     ```
 
 - Clone the repo
