@@ -1,17 +1,6 @@
 local wid = require("dashboard.wid")
 local sli = require("dashboard.sli")
 
-local sep = wibox.widget {
-  {
-    forced_height = dpi(2),
-    shape = gears.shape.line,
-    widget = wibox.widget.separator
-  },
-  top = dpi(10),
-  bottom = dpi(10),
-  widget = wibox.container.margin
-}
-
 local sliders = wibox.widget {
   {
     {
@@ -91,7 +80,6 @@ local dashboard = awful.popup {
   widget = {
     {
       {
-        -- require('dashboard.oth').clock,
         require('dashboard.oth').cal,
         layout = wibox.layout.flex.vertical,
         spacing = dpi(20),
@@ -103,7 +91,6 @@ local dashboard = awful.popup {
       layout = wibox.layout.fixed.vertical,
     },
     margins = dpi(20),
-    -- forced_height = awful.screen.focused().geometry.height - 20,
     forced_width = dpi(265),
     widget = wibox.container.margin
   },

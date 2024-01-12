@@ -1,50 +1,16 @@
 local bling = require("bling")
 local playerctl = bling.signal.playerctl.lib()
 
-local prev = wibox.widget {
-  align = 'center',
-  font = beautiful.icofont,
-  text = '',
-  widget = wibox.widget.textbox,
-}
-
-local next = wibox.widget {
-  align = 'center',
-  font = beautiful.icofont,
-  text = '',
-  widget = wibox.widget.textbox,
-}
-
-local play = wibox.widget {
-  align = 'center',
-  font = beautiful.icofont,
-  markup = '',
-  widget = wibox.widget.textbox,
-}
-
-play:buttons(gears.table.join(
-  awful.button({}, 1, function() playerctl:play_pause() end)))
-
-next:buttons(gears.table.join(
-  awful.button({}, 1, function() playerctl:next() end)))
-
-prev:buttons(gears.table.join(
-  awful.button({}, 1, function() playerctl:previous() end)))
-
-local position = wibox.widget {
-  forced_height      = dpi(3),
-  shape              = help.rrect(beautiful.br),
-  color              = beautiful.pri,
-  background_color   = beautiful.fg2..'4D',
-  forced_width       = dpi(175),
-  widget             = wibox.widget.progressbar,
-}
+local icon = require('wid.icon_btn')
+local next = icon('', function() return playerctl:next() end, 0)
+local prev = icon('', function() return playerctl:previous() end, 0)
+local play = icon('', function() return playerctl:play_pause() end, 0)
 
 local art = wibox.widget {
   image = beautiful.wall,
   resize = true,
   -- clip_shape = help.rrect(beautiful.br),
-  opacity = 0.25,
+  opacity = 0.5,
   forced_height = dpi(120),
   forced_width = dpi(120),
   widget = wibox.widget.imagebox
@@ -66,6 +32,16 @@ local artist_name = wibox.widget {
   widget = wibox.widget.textbox
 }
 
+local prg = wibox.widget {
+  forced_height      = dpi(3),
+  shape              = help.rrect(beautiful.br),
+  color              = beautiful.pri,
+  background_color   = beautiful.fg2..'4D',
+  forced_width       = dpi(175),
+  widget             = wibox.widget.progressbar,
+}
+
+
 local player = wibox.widget {
   {
     art,
@@ -85,7 +61,7 @@ local player = wibox.widget {
       {
         name,
         artist_name,
-        position,
+        prg,
         {
           prev,
           play,
@@ -102,11 +78,11 @@ local player = wibox.widget {
   },
   forced_height = dpi(120),
   shape = help.rrect(beautiful.br),
+  fg = beautiful.pri..'99',
   bg = beautiful.bg2,
   widget = wibox.container.background,
 }
 
--- Get Song Info
 playerctl:connect_signal("metadata", function(_, title, artist, album_path, album, new, player_name)
     -- Set art widget  
   if new then
@@ -115,22 +91,23 @@ playerctl:connect_signal("metadata", function(_, title, artist, album_path, albu
   art:set_image(gears.surface.load_uncached(album_path))
   name:set_markup_silently(help.fg("<b>"..title.."</b>", beautiful.pri))
   artist_name:set_markup_silently(artist)
-  -- naughty.notify { title=title, text=artist, icon=album_path }
 end)
 
 playerctl:connect_signal("playback_status", function (_, playing, _)
   if playing then
-    play:set_markup_silently(help.fg("", beautiful.pri))
-    position.color = beautiful.pri
+    play:get_children_by_id("wid")[1]:set_markup_silently(help.fg("", beautiful.pri))
+    prg.color = beautiful.pri
+    play.text = ''
   else
-    play:set_markup_silently("")
-    position.color = beautiful.fg.."66"
+    play:get_children_by_id("wid")[1]:set_markup_silently("")
+    prg.color = beautiful.fg.."66"
+    play.text = ''
   end
 end)
 
 playerctl:connect_signal("position", function (_, a, b, _)
-  position.value = a
-  position.max_value = b
+  prg.max_value = b
+  prg.value = a
 end)
 
 return player

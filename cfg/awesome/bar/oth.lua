@@ -1,3 +1,4 @@
+local btn = require('wid.btn')
 local M = {}
 
 -- Separator
@@ -14,43 +15,17 @@ M.sep = wibox.widget {
   widget = wibox.container.margin
 }
 
-M.launch = wibox.widget {
-  {
-    markup = "",
-    font = beautiful.icofont,
-    align = 'center',
-    valign = 'center',
-    widget = wibox.widget.textbox
-  },
-  widget = wibox.container.background,
-}
+local c = function (a) return function() awful.spawn.with_shell(a) end end
 
-M.search = wibox.widget {
-  {
-    markup = "",
-    font = beautiful.icofont,
-    align = 'center',
-    valign = 'center',
-    widget = wibox.widget.textbox
-  },
-  widget = wibox.container.background,
-}
+M.search = btn('', c'rofi -show drun', _, _, 10)
 
-M.search:buttons(gears.table.join(
-  awful.button({}, 1, function ()
-    awful.spawn.with_shell("rofi -show drun")
-  end)
-))
+-- local col = function()
+--   return awful.spawn.easy_async_with_shell('. ~/usr/local/bin/pluck', function (out)
+--     naughty.notify({ title=out, icon='/tmp/image.png' })
+--   end)
+-- end
 
-M.launch:buttons(gears.table.join(
-  awful.button({}, 1, function ()
-    if not dashboard.visible then
-      M.launch.fg = beautiful.pri
-    else
-      M.launch.fg = beautiful.fg
-    end
-    dashboard.toggle()
-  end)
-))
+-- M.col = btn('', c'sleep 0.1s; /usr/local/bin/pluck', _, _, 10)
+M.scr = btn('', c'flameshot gui', _, _, 10)
 
 return M

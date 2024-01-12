@@ -10,4 +10,8 @@ help.fg = function (text, color)
   return "<span foreground='"..color.."'>"..text.."</span>"
 end
 
+help.log = function(str)
+  naughty.notify({ title = str })
+end
+
 return help

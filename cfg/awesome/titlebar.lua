@@ -13,7 +13,7 @@ client.connect_signal("request::titlebars", function(c)
     end)
   )
   awful.titlebar(c, {
-    size = 30,
+    size = 32,
   }):setup {
     {
       { -- Left

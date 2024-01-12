@@ -11,11 +11,11 @@ keys = require('keys')
 help = require('help')
 dashboard = require("dashboard")
 sig = require('signals')
+menu = require('menu')
 
 local req = {
   'notif',
   'bar',
-  'menu',
   'rule',
   'titlebar',
   'music',

@@ -21,7 +21,7 @@ case $allowed in
     cp -ra home/. ~/
     printf "${cg}    Configs Copied\n"
     printf "${cb}  Copying Fonts\n"
-    cp -ran fonts/. ~/.fonts
+    cp -ran fonts/. ~/.fonts 2> /dev/null
     printf "${cg}    Fonts Copied\n"
     printf "${cb}  Copying Scripts\n"
     cp -ra bin/. ~/.local/bin/

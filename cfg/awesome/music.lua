@@ -1,26 +1,10 @@
 local bling = require("bling")
 local playerctl = bling.signal.playerctl.lib()
 
-local prev = wibox.widget {
-  align = 'center',
-  font = beautiful.icofont,
-  text = '',
-  widget = wibox.widget.textbox,
-}
-
-local next = wibox.widget {
-  align = 'center',
-  font = beautiful.icofont,
-  text = '',
-  widget = wibox.widget.textbox,
-}
-
-local play = wibox.widget {
-  align = 'center',
-  font = beautiful.icofont,
-  markup = '',
-  widget = wibox.widget.textbox,
-}
+local icon = require('wid.icon_btn')
+local next = icon('', function() return playerctl:next() end)
+local prev = icon('', function() return playerctl:previous() end)
+local play = icon('', function() return playerctl:play_pause() end)
 
 local name = wibox.widget {
   markup = '<b>Nothing Playing</b>',
@@ -54,14 +38,6 @@ playerctl:connect_signal("metadata", function(_, title, artist, album_path, albu
   artist_name:set_markup_silently(artist)
 end)
 
-playerctl:connect_signal("playback_status", function (_, playing, _)
-  if playing then
-    play:set_markup_silently(help.fg("", beautiful.pri))
-  else
-    play:set_markup_silently("")
-  end
-end)
-
 local prg = wibox.widget {
   forced_height      = dpi(3),
   color              = beautiful.pri,
@@ -71,11 +47,13 @@ local prg = wibox.widget {
 
 playerctl:connect_signal("playback_status", function (_, playing, _)
   if playing then
-    play:set_markup_silently(help.fg("", beautiful.pri))
+    play:get_children_by_id("wid")[1]:set_markup_silently(help.fg("", beautiful.pri))
     prg.color = beautiful.pri
+    play.text = ''
   else
-    play:set_markup_silently("")
+    play:get_children_by_id("wid")[1]:set_markup_silently("")
     prg.color = beautiful.fg.."66"
+    play.text = ''
   end
 end)
 
@@ -84,16 +62,6 @@ playerctl:connect_signal("position", function (_, a, b, _)
   prg.max_value = b
   prg.value = a
 end)
-
-play:buttons(gears.table.join(
-  awful.button({}, 1, function() playerctl:play_pause() end)))
-
-next:buttons(gears.table.join(
-  awful.button({}, 1, function() playerctl:next() end)))
-
-prev:buttons(gears.table.join(
-  awful.button({}, 1, function() playerctl:previous() end)))
-
 
 client.connect_signal("property::name", function(c)
   if c.name == 'Music' then

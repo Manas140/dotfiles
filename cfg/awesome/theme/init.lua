@@ -8,18 +8,18 @@ theme.icofont = 'Material Icons Round 14'
 
 theme.ok = "#8C977D"
 theme.err = "#B66467"
-theme.pri = "#8DA3B9"
+theme.pri = "#a8a3a3"
 
-theme.br = dpi(2)
+theme.br = dpi(8)
 
 theme.wall = theme_path..'wall.png'
 
-theme.bg = "#121212"
-theme.bg2 = "#181818"
-theme.bg3 = "#1e1e1e"
-
 theme.fg = "#e8e3e3"
-theme.fg2 = "#424242"
+theme.fg2 = "#626262"
+
+theme.bg = "#101010"
+theme.bg2 = '#1b1b1b'
+theme.bg3 = '#222222'
 
 theme.fg_focus = theme.fg
 theme.fg_normal = theme.fg.."40"

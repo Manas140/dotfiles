@@ -1,25 +1,6 @@
 local sys = require("bar.sys")
 local oth = require("bar.oth")
 
-local main = wibox.widget {
-  {
-    {
-      oth.launch,
-      oth.search,
-      spacing = dpi(20),
-      layout = wibox.layout.fixed.vertical,
-    },
-    left = dpi(2),
-    right = dpi(2),
-    bottom = dpi(10),
-    top = dpi(10),
-    widget = wibox.container.margin
-  },
-  shape = help.rrect(beautiful.br),
-  bg = beautiful.bg2,
-  widget = wibox.container.background,
-}
-
 local sys = wibox.widget {
   {
     {
@@ -45,17 +26,37 @@ local sys = wibox.widget {
   widget = wibox.container.background,
 }
 
+local opt = wibox.widget {
+  {
+    oth.scr,
+    -- oth.col,
+    spacing = dpi(10),
+    layout = wibox.layout.fixed.vertical,
+  },
+  shape = help.rrect(beautiful.br),
+  bg = beautiful.bg,
+  widget = wibox.container.background,
+}
+
+sys:buttons(gears.table.join(
+  awful.button({}, 1, function ()
+    dashboard.toggle()
+  end)
+))
+
+require('wid.hover')(sys)
+
 awful.screen.connect_for_each_screen(function(s)
   awful.wibar({
     position = "left",
     bg = beautiful.bg,
-    fg = beautiful.fg,
+    fg = beautiful.pri,
     width = dpi(50),
     screen = s
   }):setup {
     layout = wibox.layout.align.vertical,
     { -- Top
-      main,
+      oth.search,
       left = dpi(5),
       right = dpi(5),
       top = dpi(10),
@@ -84,7 +85,9 @@ awful.screen.connect_for_each_screen(function(s)
     },
     { -- Bottom
       {
+        opt,
         sys,
+        spacing = dpi(10),
         layout = wibox.layout.fixed.vertical,
       },
       top = dpi(5),
